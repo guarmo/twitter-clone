@@ -1,0 +1,43 @@
+@import '../../../../styles/variables/variables';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-weight: bold;
+
+  &__left {
+      display: flex;
+      align-items: center; 
+      
+      img {
+          width: 30px;
+          margin-right: 10px;
+      }
+}
+
+  &__middle {
+      display: flex;
+      justify-content: center;
+
+      button {
+          color: $custom-gray;
+          margin-right: 25px;
+
+          &:hover {
+              color: $custom-blue;
+          }
+      }
+  }
+
+  &__right {
+      display: flex;
+      align-items: center;
+
+      img {
+          width: 40px;
+          margin-right: 10px;
+      }
+  }
+}
