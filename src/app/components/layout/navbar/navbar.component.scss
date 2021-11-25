@@ -1,46 +1,56 @@
 @import '../../../../styles/variables/variables';
+@import '../../../../styles/variables/breakpoints';
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  font-weight: bold;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #fff;
-
-  &__left {
-      display: flex;
-      align-items: center; 
+.wrapper {
+    background-color: #fff;
+    
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        font-weight: bold;
+        width: 800px;
+        max-width: 90vw;
+        margin: 0 auto;
       
-      img {
-          width: 30px;
-          margin-right: 10px;
+        &__left {
+            display: flex;
+            align-items: center; 
+            
+            img {
+                width: 30px;
+                margin-right: 10px;
+            }
       }
-}
+      
+        &__middle {
+            display: flex;
+            justify-content: center;
+      
+            button {
+                color: $custom-gray;
+                margin-right: 25px;
+      
+                &:hover {
+                    color: $custom-blue;
+                }
+            }
+        }
+      
+        &__right {
+            display: flex;
+            align-items: center;
+      
+            img {
+                width: 40px;
+                margin-right: 10px;
+            }
 
-  &__middle {
-      display: flex;
-      justify-content: center;
-
-      button {
-          color: $custom-gray;
-          margin-right: 25px;
-
-          &:hover {
-              color: $custom-blue;
-          }
+            @media screen and (max-width: $breakpoint-medium) {
+                display: none;
+            }
+        }
       }
-  }
-
-  &__right {
-      display: flex;
-      align-items: center;
-
-      img {
-          width: 40px;
-          margin-right: 10px;
-      }
-  }
+      
 }

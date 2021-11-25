@@ -1,7 +1,13 @@
+@import "../../../../styles/variables/breakpoints";
+
 .feed {
-  width: 70%;
+  width: 900px;
   margin: 140px auto 20px;
   display: flex;
+
+  @media screen and (max-width: $breakpoint-large) {
+    width: 90vw;
+  }
 
   &__left {
     width: 30%;

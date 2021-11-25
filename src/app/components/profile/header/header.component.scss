@@ -1,4 +1,5 @@
 @import "../../../../styles/variables/variables";
+@import "../../../../styles/variables/breakpoints";
 
 .header {
   position: relative;
@@ -18,12 +19,21 @@
     transform: translate(-50%, 0);
     background-color: #fff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 10px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 70%;
-    max-width: 90vw;
+    width: 900px;
+
+    @media screen and (max-width: $breakpoint-large) {
+      width: 90vw;
+    }
+
+    @media screen and (max-width: $breakpoint-medium) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 10px;
+    }
 
     img {
       width: 140px;
@@ -44,6 +54,10 @@
       &__details {
         display: flex;
         margin-bottom: 20px;
+
+        @media screen and (max-width: $breakpoint-medium) {
+          justify-content: center;
+        }
       }
       .name {
           margin-right: 10px;
