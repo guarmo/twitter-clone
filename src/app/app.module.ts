@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { HeaderComponent } from './components/profile/header/header.component';
 import { SidebarComponent } from './components/profile/sidebar/sidebar.component';
 import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
+import { PostComponent } from './components/profile/post/post.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ProfileFeedComponent } from './components/profile/profile-feed/profile-
     HeaderComponent,
     SidebarComponent,
     ProfileFeedComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

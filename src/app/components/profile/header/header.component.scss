@@ -19,7 +19,7 @@
     transform: translate(-50%, 0);
     background-color: #fff;
     border-radius: 5px;
-    padding: 10px 10px 0;
+    padding: 30px 10px 0;
     display: flex;
     justify-content: center;
     width: 900px;
@@ -38,7 +38,7 @@
     img {
       width: 140px;
       border-radius: 5px;
-        transform: translateY(-30%);
+        transform: translateY(-40%);
     }
 
     &__left {
@@ -84,6 +84,11 @@
         color: #fff;
         padding: 10px 20px;
         border-radius: 5px;
+        margin-left: 20px;
+
+        @media screen and (max-width: $breakpoint-medium) {
+          margin-left: 0;
+        }
       }
     }
   }
