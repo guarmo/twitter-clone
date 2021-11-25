@@ -7,22 +7,38 @@
       "followers": 150,
       "description": "Photographer & Filmmaker based in Copenhagen, Denmark",
       "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
-    }
-  ],
-  "tweets": [
+    },
     {
-      "id": 1,
-      "user": 1,
-      "date": "24 August at 20:43",
-      "content": "Traveling - leaves you speechless, then turns you into a storyteller"
+      "id": 2,
+      "name": "Peyton Lyons",
+      "following": 20,
+      "followers": 15000,
+      "description": "Just another user",
+      "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "tweets": [
+        {
+          "id": 1,
+          "user": 1,
+          "date": "24 August at 20:43",
+          "content": "Traveling - leaves you speechless, then turns you into a storyteller"
+        }
+      ]
     }
   ],
   "feed": [
     {
       "id": 1,
-      "user": 1,
+      "user": 2,
       "date": "24 August at 20:43",
-      "content": "Traveling - leaves you speechless, then turns you into a storyteller"
+      "content": "Traveling - leaves you speechless, then turns you into a storyteller",
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg"
+    },
+    {
+      "id": 1,
+      "user": 2,
+      "date": "24 August at 20:43",
+      "content": "Traveling - leaves you speechless, then turns you into a storyteller",
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg"
     }
   ]
 }

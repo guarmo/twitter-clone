@@ -13,5 +13,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.profileService.fetchUser();
+    this.profileService.fetchUserFeed();
   }
 }

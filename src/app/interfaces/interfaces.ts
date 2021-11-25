@@ -6,3 +6,10 @@ export interface IProfile {
     description: string,
     picture: string
   }
+
+  export interface ITweet {
+    id: number,
+    user: number,
+    date: string,
+    content: string
+  }

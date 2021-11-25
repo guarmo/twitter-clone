@@ -6,8 +6,6 @@
     <h1>Likes</h1>
   </div>
   <div class="feed__right">
-   <app-post></app-post>
-   <app-post></app-post>
-   <app-post></app-post>
+   <app-post [tweet]="tweet" *ngFor="let tweet of feed"></app-post>
   </div>
 </div>
