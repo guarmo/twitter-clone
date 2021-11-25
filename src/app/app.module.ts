@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/profile/header/header.component';
 import { SidebarComponent } from './components/profile/sidebar/sidebar.component';
 import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
 import { PostComponent } from './components/profile/post/post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PostComponent } from './components/profile/post/post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,17 +2,17 @@
   <div class="header__banner"></div>
   <div class="header__content">
     <img
-      src="https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
+      src={{profile?.picture}}
       alt="profile picture"
     />
     <div class="header__content__left">
       <div class="header__content__left__details">
-        <h1 class="name">Daniel Jensen</h1>
-        <p class="following"><span>2,650</span>Following</p>
-        <p class="followers"><span>10,2K</span>Followers</p>
+        <h1 class="name">{{profile?.name}}</h1>
+        <p class="following"><span>{{profile?.following}}</span>Following</p>
+        <p class="followers"><span>{{profile?.followers}}</span>Followers</p>
       </div>
       <div class="desc">
-        Photographer & Filmmaker based in Copenhagen, Denmark
+        {{profile?.description}}
       </div>
     </div>
     <div class="header__content__right">

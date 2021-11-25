@@ -3,12 +3,21 @@
     {
       "id": 1,
       "name": "Daniel Jensen",
-      "following": "2650",
-      "followers": "150",
-      "description": "Photographer & Filmmaker based in Copenhagen, Denmark"
+      "following": 2650,
+      "followers": 150,
+      "description": "Photographer & Filmmaker based in Copenhagen, Denmark",
+      "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
     }
   ],
   "tweets": [
+    {
+      "id": 1,
+      "user": 1,
+      "date": "24 August at 20:43",
+      "content": "Traveling - leaves you speechless, then turns you into a storyteller"
+    }
+  ],
+  "feed": [
     {
       "id": 1,
       "user": 1,
