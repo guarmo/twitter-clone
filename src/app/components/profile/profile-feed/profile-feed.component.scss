@@ -1,0 +1,33 @@
+@import "../../../../styles/variables/variables";
+@import "../../../../styles/variables/breakpoints";
+
+.feed {
+  width: 900px;
+  margin: 140px auto 20px;
+  display: flex;
+
+  @media screen and (max-width: $breakpoint-large) {
+    width: 90vw;
+  }
+
+  &__left {
+    width: 30%;
+    background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-right: 20px;
+      height: min-content;
+
+      h1 {
+        margin-bottom: 15px;
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
+  }
+
+  &__right {
+    width: 70%;
+  }
+}

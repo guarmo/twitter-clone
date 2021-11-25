@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProfileService } from './services/profile.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'twitter-clone';
+
+  constructor(private profileService: ProfileService) {}
+
+  ngOnInit() {
+    this.profileService.fetchUser();
+    this.profileService.fetchUserFeed();
+  }
 }
