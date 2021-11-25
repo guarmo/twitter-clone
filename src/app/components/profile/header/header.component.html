@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="header__banner"></div>
+  <div class="header__content">
+    <img
+      src={{profile?.picture}}
+      alt="profile picture"
+    />
+    <div class="header__content__left">
+      <div class="header__content__left__details">
+        <h1 class="name">{{profile?.name}}</h1>
+        <p class="following"><span>{{profile?.following}}</span>Following</p>
+        <p class="followers"><span>{{profile?.followers}}</span>Followers</p>
+      </div>
+      <div class="desc">
+        {{profile?.description}}
+      </div>
+    </div>
+    <div class="header__content__right">
+      <button>Follow</button>
+    </div>
+  </div>
+</div>
