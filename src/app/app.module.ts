@@ -3,10 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { HeaderComponent } from './components/profile/header/header.component';
+import { SidebarComponent } from './components/profile/sidebar/sidebar.component';
+import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    HeaderComponent,
+    SidebarComponent,
+    ProfileFeedComponent,
   ],
   imports: [
     BrowserModule,
