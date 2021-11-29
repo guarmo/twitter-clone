@@ -7,9 +7,22 @@ export interface IProfile {
     picture: string
   }
 
+  interface IComment {
+    user: number,
+    content: string,
+    date: string
+  }
+
+  interface IRetweet {
+    value: boolean,
+    userRetweet: number
+  }
+
   export interface ITweet {
     id: number,
     user: number,
     date: string,
-    content: string
+    content: string,
+    retweet: IRetweet,
+    comments: IComment[]
   }

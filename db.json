@@ -6,7 +6,7 @@
       "following": 2650,
       "followers": 150,
       "description": "Photographer & Filmmaker based in Copenhagen, Denmark",
-      "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
+      "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
     },
     {
       "id": 2,
@@ -15,14 +15,6 @@
       "followers": 15000,
       "description": "Just another user",
       "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-      "tweets": [
-        {
-          "id": 1,
-          "user": 1,
-          "date": "24 August at 20:43",
-          "content": "Traveling - leaves you speechless, then turns you into a storyteller"
-        }
-      ]
     }
   ],
   "feed": [
@@ -31,14 +23,26 @@
       "user": 2,
       "date": "24 August at 20:43",
       "content": "Traveling - leaves you speechless, then turns you into a storyteller",
-      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg"
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
+      "retweet": {
+        "value": false
+      },
+      "comments": [
+        { "user": 2, "content": "This is a comment", "date": "24 August at 23:23" },
+        { "user": 1, "content": "This is another comment", "date": "24 August at 23:43" }
+      ]
     },
     {
-      "id": 1,
+      "id": 2,
       "user": 2,
-      "date": "24 August at 20:43",
-      "content": "Traveling - leaves you speechless, then turns you into a storyteller",
-      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg"
+      "date": "24 August at 22:43",
+      "content": "This is another post",
+      "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
+      "retweet": {
+        "value": true,
+        "userRetweet": 1
+      },
+      "comments": []
     }
   ]
 }
