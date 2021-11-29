@@ -10,6 +10,7 @@ import { ProfileFeedComponent } from './components/profile/profile-feed/profile-
 import { PostComponent } from './components/profile/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 const materialModules = [
   MatIconModule
@@ -28,6 +29,7 @@ const materialModules = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ...materialModules
   ],
   providers: [],

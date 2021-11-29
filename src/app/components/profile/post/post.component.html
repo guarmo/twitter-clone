@@ -20,7 +20,7 @@
     <img src="../../../../assets/images/banner.jpeg" alt="image" />
 
     <div class="buttons">
-      <div class="buttons__container">
+      <div (click)="onShowInput()" class="buttons__container">
         <mat-icon class="icon" aria-label="Example home icon"
           >chat_bubble_outline</mat-icon
         >
@@ -46,11 +46,24 @@
       </div>
     </div>
 
-    <div class="userInput">
-      <img class="userPicture" src="{{ user.picture }}" alt="" />
-      <input type="text" placeholder="Tweet your reply" />
+    <form
+      *ngIf="showInput"
+      (ngSubmit)="onSubmit(commentForm)"
+      class="userInput"
+      #commentForm="ngForm"
+    >
+    <img class="userPicture" src="{{ user.picture }}" alt="" />
+    <div class="form-group">
+      <input
+        type="text"
+        id="userInput"
+        name="userInput"
+        class="form-control"
+        placeholder="Tweet your reply"
+        ngModel
+      />
     </div>
-
+    </form>
   </div>
   <div class="post__bottom">
     <div class="comment" *ngFor="let comment of tweet.comments">
