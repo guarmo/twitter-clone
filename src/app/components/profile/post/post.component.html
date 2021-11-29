@@ -1,15 +1,20 @@
 <div class="post">
   <div class="post__top">
     <div class="header">
-      <img src="../../../../assets/images/profile.png" alt="" />
+      <img src="{{ tweet.userPicture }}" alt="" />
       <div>
-        <h1 class="name">{{ tweet?.user }}</h1>
+        <h1 class="name">{{ tweet?.userName }}</h1>
         <p class="date">{{ tweet?.date }}</p>
       </div>
     </div>
     <p>
       {{ tweet?.content }}
     </p>
+    <div class="header__bottom">
+      <h1>{{ tweet.likes }} Likes</h1>
+      <h1>{{ tweet.retweet.retweetCount }} Retweets</h1>
+      <h1>{{ tweet.comments.length }} Comments</h1>
+    </div>
   </div>
   <div class="post__middle">
     <img src="../../../../assets/images/banner.jpeg" alt="image" />
@@ -23,6 +28,9 @@
           <h1 class="date">{{ comment.date }}</h1>
         </div>
         <h1>{{ comment.content }}</h1>
+        <div class="comment__content__bottom">
+          <h1>{{ comment.likes }} Likes</h1>
+        </div>
       </div>
     </div>
   </div>

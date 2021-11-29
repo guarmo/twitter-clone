@@ -1,70 +1,103 @@
-@import '../../../../styles/variables/variables';
+@import "../../../../styles/variables/variables";
 
 .post {
-    max-width: 100%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  &__top {
     margin-bottom: 20px;
 
-    &__top {
+    .header {
+      display: flex;
+      align-items: center;
       margin-bottom: 20px;
 
-      .header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-
-          name {
-            margin-bottom: 5px;
-          }
+      .name {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
       }
+      .date {
+        font-size: 13px;
+        color: $light-gray;
+      }
+
+      &__bottom {
+        display: flex;
+        margin: 10px 0;
+
+        h1 {
+          color: $light-gray;
+          font-size: 13px;
+          margin-left: 10px;
+        }
+
+        :nth-child(1) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  &__middle {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__bottom {
+    .comment {
+      display: flex;
+      margin: 20px 0;
 
       img {
         width: 40px;
-        margin-right: 10px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 8px;
       }
-    }
 
-    &__middle {
-      img {
-        max-width: 100%;
-      }
-    }
+      &__content {
+        width: 100%;
+        margin-left: 10px;
+        padding: 10px;
+        background-color: #fafafa;
+        border-radius: 8px;
 
-    &__bottom {
-      .comment {
-        display: flex;
-        margin: 20px 0;
+        &__top {
+          display: flex;
+          margin-bottom: 10px;
+          font-size: 13px;
 
-        img {
-          width: 40px;
-          height: 40px;
-          object-fit: cover;
+          .username {
+            font-weight: bold;
+          }
+
+          .date {
+            color: $light-gray;
+            margin-left: 10px;
+          }
         }
 
-        &__content {
-          width: 100%;
-          margin-left: 10px;
-          padding: 10px;
-          background-color: #FAFAFA;
-          border-radius: 8px;
-
-          &__top {
-            display: flex;
-            margin-bottom: 10px;
+        &__bottom {
+          h1 {
+            color: $light-gray;
             font-size: 13px;
-
-            .username {
-              font-weight: bold;
-            }
-
-            .date {
-              color: $light-gray;
-              margin-left: 10px;
-            }
+            margin-top: 10px;
           }
         }
       }
     }
   }
+}

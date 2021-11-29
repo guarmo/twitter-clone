@@ -13,18 +13,23 @@ export interface IProfile {
     userPicture: string,
     content: string,
     date: string
+    likes: number
   }
 
   interface IRetweet {
     value: boolean,
-    userRetweet: number
+    userRetweet: number,
+    retweetCount: number
   }
 
   export interface ITweet {
     id: number,
     user: number,
+    userName: string,
+    userPicture: string,
     date: string,
     content: string,
+    likes: number,
     retweet: IRetweet,
     comments: IComment[]
   }

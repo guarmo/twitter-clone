@@ -21,38 +21,48 @@
     {
       "id": 1,
       "user": 2,
+      "userName":"Peyton Lyons",
+      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
       "date": "24 August at 20:43",
       "content": "Traveling - leaves you speechless, then turns you into a storyteller",
       "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
       "retweet": {
-        "value": false
+        "value": false,
+        "retweetCount": 0
       },
+      "likes": 0,
       "comments": [
         {
           "user": 2,
           "userName": "Peyton Lyons",
           "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
           "content": "This is a comment",
-          "date": "24 August at 23:23"
+          "date": "24 August at 23:23",
+          "likes": 0
         },
         {
           "user": 1,
           "userName": "Daniel Jensen",
           "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
           "content": "This is another comment",
-          "date": "24 August at 23:43"
+          "date": "24 August at 23:43",
+          "likes": 0
         }
       ]
     },
     {
       "id": 2,
       "user": 2,
+      "userName":"Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "date": "24 August at 22:43",
       "content": "This is another post",
       "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
+      "likes": 0,
       "retweet": {
         "value": true,
-        "userRetweet": 1
+        "userRetweet": 1,
+        "retweetCount": 1
       },
       "comments": []
     }
