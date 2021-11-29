@@ -7,6 +7,14 @@
   border-radius: 5px;
   margin-bottom: 20px;
 
+  .userPicture {
+    width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      object-fit: cover;
+      border-radius: 8px;
+  }
+
   &__top {
     margin-bottom: 20px;
 
@@ -40,14 +48,6 @@
         }
       }
     }
-
-    img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
   }
 
   &__middle {
@@ -65,13 +65,39 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 10px;
+        padding: 5px;
+        border-radius: 8px;
         cursor: pointer;
+        width: 100%;
+
+        &:hover {
+          background-color: $lighter-gray;
+        }
 
         .icon {
           margin-right: 10px;
         }
       }
+    }
+
+    .userInput {
+      display: flex;
+
+      input {
+        width: 100%;
+        margin-left: 10px;
+        padding: 10px;
+        background-color: #fafafa;
+        border-radius: 8px;
+        border: none;
+        outline: transparent;
+        padding: 10px;
+
+        &::placeholder {
+          color: $light-gray;
+        }
+      }
+
     }
   }
 
@@ -79,13 +105,6 @@
     .comment {
       display: flex;
       margin: 20px 0;
-
-      img {
-        width: 40px;
-        height: 40px;
-        object-fit: cover;
-        border-radius: 8px;
-      }
 
       &__content {
         width: 100%;

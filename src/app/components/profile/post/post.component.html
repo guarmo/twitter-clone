@@ -1,7 +1,7 @@
 <div class="post">
   <div class="post__top">
     <div class="header">
-      <img src="{{ tweet.userPicture }}" alt="" />
+      <img class="userPicture" src="{{ tweet.userPicture }}" alt="" />
       <div>
         <h1 class="name">{{ tweet?.userName }}</h1>
         <p class="date">{{ tweet?.date }}</p>
@@ -21,26 +21,44 @@
 
     <div class="buttons">
       <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon">chat_bubble_outline</mat-icon>
+        <mat-icon class="icon" aria-label="Example home icon"
+          >chat_bubble_outline</mat-icon
+        >
         <span>Comment</span>
       </div>
       <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon">autorenew</mat-icon>
+        <mat-icon class="icon" aria-label="Example home icon"
+          >autorenew</mat-icon
+        >
         <span>Retweet</span>
       </div>
       <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon">favorite_border</mat-icon>
+        <mat-icon class="icon" aria-label="Example home icon"
+          >favorite_border</mat-icon
+        >
         <span>Like</span>
       </div>
       <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon">bookmark_border</mat-icon>
+        <mat-icon class="icon" aria-label="Example home icon"
+          >bookmark_border</mat-icon
+        >
         <span>Save</span>
       </div>
     </div>
+
+    <div class="userInput">
+      <img class="userPicture" src="{{ tweet.userPicture }}" alt="" />
+      <input type="text" placeholder="Tweet your reply" />
+    </div>
+
   </div>
   <div class="post__bottom">
     <div class="comment" *ngFor="let comment of tweet.comments">
-      <img src="{{ comment.userPicture }}" alt="User picture" />
+      <img
+        class="userPicture"
+        src="{{ comment.userPicture }}"
+        alt="User picture"
+      />
       <div class="comment__content">
         <div class="comment__content__top">
           <h1 class="username">{{ comment.userName }}</h1>
@@ -48,8 +66,10 @@
         </div>
         <h1>{{ comment.content }}</h1>
         <div class="comment__content__bottom">
-          <mat-icon class="icon" aria-label="Example home icon">favorite_border</mat-icon>
-            <h1>Like</h1>
+          <mat-icon class="icon" aria-label="Example home icon"
+            >favorite_border</mat-icon
+          >
+          <h1>Like</h1>
           <h1>{{ comment.likes }} Likes</h1>
         </div>
       </div>

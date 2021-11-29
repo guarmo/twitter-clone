@@ -10,7 +10,7 @@ import { tap } from 'rxjs/operators';
 })
 export class ProfileFeedComponent implements OnInit {
   feed: ITweet[];
-  
+
   constructor(private profileService: ProfileService) { }
 
   ngOnInit(): void {
