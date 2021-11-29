@@ -18,6 +18,25 @@
   </div>
   <div class="post__middle">
     <img src="../../../../assets/images/banner.jpeg" alt="image" />
+
+    <div class="buttons">
+      <div class="buttons__container">
+        <mat-icon class="icon" aria-label="Example home icon">chat_bubble_outline</mat-icon>
+        <span>Comment</span>
+      </div>
+      <div class="buttons__container">
+        <mat-icon class="icon" aria-label="Example home icon">autorenew</mat-icon>
+        <span>Retweet</span>
+      </div>
+      <div class="buttons__container">
+        <mat-icon class="icon" aria-label="Example home icon">favorite_border</mat-icon>
+        <span>Like</span>
+      </div>
+      <div class="buttons__container">
+        <mat-icon class="icon" aria-label="Example home icon">bookmark_border</mat-icon>
+        <span>Save</span>
+      </div>
+    </div>
   </div>
   <div class="post__bottom">
     <div class="comment" *ngFor="let comment of tweet.comments">
@@ -29,6 +48,8 @@
         </div>
         <h1>{{ comment.content }}</h1>
         <div class="comment__content__bottom">
+          <mat-icon class="icon" aria-label="Example home icon">favorite_border</mat-icon>
+            <h1>Like</h1>
           <h1>{{ comment.likes }} Likes</h1>
         </div>
       </div>

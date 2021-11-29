@@ -54,6 +54,25 @@
     img {
       max-width: 100%;
     }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 20px 0;
+
+      &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        cursor: pointer;
+
+        .icon {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 
   &__bottom {
@@ -91,10 +110,21 @@
         }
 
         &__bottom {
-          h1 {
+          display: flex;
+          align-items: center;
+
+          h1, .icon {
             color: $light-gray;
             font-size: 13px;
             margin-top: 10px;
+            margin-right: 10px;
+            width: initial;
+            height: initial;
+          }
+
+          :nth-child(1) {
+            cursor: pointer;
+            margin-right: 5px;
           }
         }
       }
