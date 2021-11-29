@@ -1,20 +1,29 @@
 <div class="post">
-    <div class="post__top">
-      <div class="header">
-        <img src="../../../../assets/images/profile.png" alt="" />
-        <div>
-          <h1 class="name">{{tweet?.user}}</h1>
-          <p class="date">{{tweet?.date}}</p>
-        </div>
+  <div class="post__top">
+    <div class="header">
+      <img src="../../../../assets/images/profile.png" alt="" />
+      <div>
+        <h1 class="name">{{ tweet?.user }}</h1>
+        <p class="date">{{ tweet?.date }}</p>
       </div>
-      <p>
-        {{tweet?.content}}
-      </p>
     </div>
-    <div class="post__middle">
-      <img src="../../../../assets/images/banner.jpeg" alt="image" />
-    </div>
-    <div class="post__bottom">
-      <h1>Bottom</h1>
+    <p>
+      {{ tweet?.content }}
+    </p>
+  </div>
+  <div class="post__middle">
+    <img src="../../../../assets/images/banner.jpeg" alt="image" />
+  </div>
+  <div class="post__bottom">
+    <div class="comment" *ngFor="let comment of tweet.comments">
+      <img src="{{ comment.userPicture }}" alt="User picture" />
+      <div class="comment__content">
+        <div class="comment__content__top">
+          <h1 class="username">{{ comment.userName }}</h1>
+          <h1 class="date">{{ comment.date }}</h1>
+        </div>
+        <h1>{{ comment.content }}</h1>
+      </div>
     </div>
   </div>
+</div>

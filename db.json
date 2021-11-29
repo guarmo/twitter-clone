@@ -5,8 +5,8 @@
       "name": "Daniel Jensen",
       "following": 2650,
       "followers": 150,
-      "description": "Photographer & Filmmaker based in Copenhagen, Denmark",
-      "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "description": "Phogiv e in Copenhagen, Denmark",
+      "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "following": 20,
       "followers": 15000,
       "description": "Just another user",
-      "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg"
     }
   ],
   "feed": [
@@ -28,8 +28,20 @@
         "value": false
       },
       "comments": [
-        { "user": 2, "content": "This is a comment", "date": "24 August at 23:23" },
-        { "user": 1, "content": "This is another comment", "date": "24 August at 23:43" }
+        {
+          "user": 2,
+          "userName": "Peyton Lyons",
+          "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+          "content": "This is a comment",
+          "date": "24 August at 23:23"
+        },
+        {
+          "user": 1,
+          "userName": "Daniel Jensen",
+          "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+          "content": "This is another comment",
+          "date": "24 August at 23:43"
+        }
       ]
     },
     {

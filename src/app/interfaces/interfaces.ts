@@ -9,6 +9,8 @@ export interface IProfile {
 
   interface IComment {
     user: number,
+    userName: string,
+    userPicture: string,
     content: string,
     date: string
   }

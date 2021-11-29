@@ -1,3 +1,5 @@
+@import '../../../../styles/variables/variables';
+
 .post {
     max-width: 100%;
     background-color: #fff;
@@ -31,5 +33,38 @@
     }
 
     &__bottom {
+      .comment {
+        display: flex;
+        margin: 20px 0;
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+        }
+
+        &__content {
+          width: 100%;
+          margin-left: 10px;
+          padding: 10px;
+          background-color: #FAFAFA;
+          border-radius: 8px;
+
+          &__top {
+            display: flex;
+            margin-bottom: 10px;
+            font-size: 13px;
+
+            .username {
+              font-weight: bold;
+            }
+
+            .date {
+              color: $light-gray;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
     }
   }
