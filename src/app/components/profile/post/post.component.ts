@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ITweet } from 'src/app/interfaces/interfaces';
+import { IProfile, ITweet } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-post',
@@ -8,10 +8,12 @@ import { ITweet } from 'src/app/interfaces/interfaces';
 })
 export class PostComponent implements OnInit {
  @Input('tweet') tweet: ITweet;
+ @Input('user') user: IProfile;
 
   constructor() { }
 
   ngOnInit(): void {
+    // console.log(this.user)
   }
 
 }
