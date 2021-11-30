@@ -7,8 +7,9 @@ export interface IProfile {
     picture: string
   }
 
-  interface IComment {
+  export interface IComment {
     user: number,
+    postId: number,
     userName: string,
     userPicture: string,
     content: string,
@@ -30,6 +31,5 @@ export interface IProfile {
     date: string,
     content: string,
     likes: number,
-    retweet: IRetweet,
-    comments: IComment[]
+    retweet: IRetweet
   }

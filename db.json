@@ -30,25 +30,7 @@
         "value": false,
         "retweetCount": 0
       },
-      "likes": 0,
-      "comments": [
-        {
-          "user": 2,
-          "userName": "Peyton Lyons",
-          "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-          "content": "This is a comment",
-          "date": "24 August at 23:23",
-          "likes": 0
-        },
-        {
-          "user": 1,
-          "userName": "Daniel Jensen",
-          "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-          "content": "This is another comment",
-          "date": "24 August at 23:43",
-          "likes": 0
-        }
-      ]
+      "likes": 0
     },
     {
       "id": 2,
@@ -63,8 +45,30 @@
         "value": true,
         "userRetweet": 1,
         "retweetCount": 1
-      },
-      "comments": []
+      }
     }
+  ],
+  "tweetComments": [
+    {
+      "user": 2,
+      "postId": 1,
+      "userName": "Peyton Lyons",
+      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "content": "This is a comment",
+      "date": "24 August at 23:23",
+      "likes": 0
+    },
+    {
+      "user": 1,
+      "postId": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "This is another comment",
+      "date": "24 August at 23:43",
+      "likes": 0
+    }
+  ],
+  "replyComments": [
+
   ]
 }

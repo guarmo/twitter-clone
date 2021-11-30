@@ -14,5 +14,7 @@ export class AppComponent {
   ngOnInit() {
     this.profileService.fetchUser();
     this.profileService.fetchUserFeed();
+    this.profileService.getComments("tweetComments");
+    this.profileService.getComments("replyComments");
   }
 }

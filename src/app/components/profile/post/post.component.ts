@@ -19,10 +19,10 @@ export class PostComponent implements OnInit {
   }
 
   onSubmit(form: NgForm): void {
-    if (form.controls.userInput.dirty) {
+    if (!form.pristine) {
       console.log(form.controls.userInput.value);
     } else {
-      alert('No comment added!');
+      alert('Please add a comment');
     }
   }
 

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { IProfile, ITweet } from '../interfaces/interfaces';
+import { Observable, Subject } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { IProfile, ITweet, IComment } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +10,8 @@ import { IProfile, ITweet } from '../interfaces/interfaces';
 export class ProfileService {
   profile = new Subject<IProfile>();
   feed = new Subject<ITweet[]>();
+  tweetComments = new Subject<IComment[]>();
+  replyComments = new Subject<IComment[]>();
 
   constructor(private http: HttpClient) {}
 
@@ -41,10 +43,38 @@ export class ProfileService {
       );
   }
 
-  fetchTweets() {
+  getComments(type: 'tweetComments' | 'replyComments'): void {
     this.http
-      .get('http://localhost:3000/tweets')
-      .pipe(tap((val) => console.log(val)))
-      .subscribe();
+      .get<IComment[]>(`http://localhost:3000/${type}`)
+      .subscribe((comments) => {
+        if (type === 'tweetComments') {
+          this.tweetComments.next(comments);
+        }
+        if (type === 'replyComments') {
+          this.replyComments.next(comments);
+        }
+        return;
+      });
+  }
+
+  commentTweet(tweetId: number): Observable<ITweet> {
+    return this.http.post<ITweet>(
+      `http://localhost:3000/tweetComments/${tweetId}`,
+      {
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: {
+          user: 1,
+          postId: 2,
+          userName: 'Daniel Jensen',
+          userPicture:
+            'https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg',
+          content: 'Comment posted',
+          date: '26 August at 11:22',
+          likes: 0,
+        },
+      }
+    );
   }
 }
