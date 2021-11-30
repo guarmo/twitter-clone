@@ -17,6 +17,7 @@
       "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg"
     }
   ],
+  "profileFeed": [],
   "feed": [
     {
       "id": 1,
@@ -27,13 +28,17 @@
       "content": "Traveling - leaves you speechless, then turns you into a storyteller",
       "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
       "retweet": {
-        "value": false,
-        "retweetCount": 0
+        "value": true,
+        "userRetweet": [
+          1
+        ],
+        "retweetCount": 2
       },
       "likes": [
         1
       ],
-      "commentsCount": 2
+      "commentsCount": 2,
+      "saved": [1]
     },
     {
       "id": 2,
@@ -47,11 +52,12 @@
         1
       ],
       "retweet": {
-        "value": true,
-        "userRetweet": 1,
-        "retweetCount": 1
+        "value": false,
+        "userRetweet": [],
+        "retweetCount": 0
       },
-      "commentsCount": 0
+      "commentsCount": 0,
+      "saved": []
     }
   ],
   "tweetComments": [
@@ -88,5 +94,19 @@
       "likes": []
     }
   ],
-  "replyComments": []
+  "replyComments": [],
+  "savedTweets": [
+    {
+      "id": 1,
+      "user": 2,
+      "userName": "Peyton Lyons",
+      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "date": 1638267731090,
+      "content": "Traveling - leaves you speechless, then turns you into a storyteller",
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
+      "retweet": [],
+      "likes": [],
+      "commentsCount": 2
+    }
+  ]
 }

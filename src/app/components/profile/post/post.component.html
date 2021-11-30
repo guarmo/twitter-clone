@@ -11,7 +11,7 @@
       {{ tweet?.content }}
     </p>
     <div class="header__bottom">
-      <h1>{{ tweet.likes }} Likes</h1>
+      <h1>{{ tweet.likes.length ? tweet.likes.length : 0 }} Likes</h1>
       <h1>{{ tweet.retweet.retweetCount }} Retweets</h1>
       <h1>{{ tweet.commentsCount }} Comments</h1>
     </div>
@@ -26,26 +26,27 @@
         >
         <span>Comment</span>
       </div>
-      <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon"
+      <div (click)="onRetweet(user.id, tweet)" class="buttons__container">
+        <mat-icon [ngClass]="tweet.retweet.userRetweet.includes(user.id) ? 'retweeted icon' : 'icon'" class="icon" aria-label="Example home icon"
           >autorenew</mat-icon
         >
-        <span>Retweet</span>
+        <span [ngClass]="{ 'retweeted': tweet.retweet.userRetweet.includes(user.id) }">Retweet</span>
       </div>
       <div (click)="onLikeTweet(user.id, tweet)" class="buttons__container">
         <mat-icon
-          class="icon"
-          [ngClass]="{ 'liked': tweet.likes.includes(user.id) }"
+          [ngClass]="tweet.likes.includes(user.id) ? 'liked icon': 'icon'"
           aria-label="Example home icon"
           >favorite_border</mat-icon
         >
         <span [ngClass]="{ 'liked': tweet.likes.includes(user.id) }">Like</span>
       </div>
-      <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon"
+      <div (click)="onSaveTweet(user.id, tweet)" class="buttons__container">
+        <mat-icon
+        [ngClass]="tweet.saved.includes(user.id) ? 'saved icon': 'icon'"
+        aria-label="Example home icon"
           >bookmark_border</mat-icon
         >
-        <span>Save</span>
+        <span [ngClass]="{ 'saved': tweet.saved.includes(user.id) }">Save</span>
       </div>
     </div>
 

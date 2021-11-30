@@ -76,8 +76,16 @@
         cursor: pointer;
         width: 100%;
 
+        .saved {
+          color: $custom-blue;
+        }
+
         .liked {
           color: $custom-red;
+        }
+
+        .retweeted {
+          color: $custom-green;
         }
 
         &:hover {

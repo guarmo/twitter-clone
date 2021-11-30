@@ -64,5 +64,15 @@ export class PostComponent implements OnInit {
     this.tweetService.likeTweet(userId, tweet);
   }
 
+  onSaveTweet(userId: string | number, tweet: ITweet): void {
+    alert("Tweet saved");
+    this.tweetService.saveTweet(userId, tweet);
+  }
+
+  onRetweet(userId: number | string, tweet: ITweet): void {
+    alert("Retweeted");
+    this.tweetService.retweet(userId, tweet);
+  }
+
   ngOnInit(): void {}
 }

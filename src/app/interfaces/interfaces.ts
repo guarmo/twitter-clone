@@ -20,7 +20,7 @@ export interface IProfile {
 
   interface IRetweet {
     value: boolean,
-    userRetweet: number,
+    userRetweet: (number | string)[],
     retweetCount: number
   }
 
@@ -33,5 +33,6 @@ export interface IProfile {
     content: string,
     likes: (number | string)[],
     retweet: IRetweet,
-    commentsCount: number
+    commentsCount: number,
+    saved: (number | string)[]
   }

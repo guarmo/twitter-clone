@@ -20,6 +20,7 @@ export class AppComponent {
   ngOnInit() {
     this.profileService.fetchUser();
     this.tweetsService.fetchFeed();
+    this.tweetsService.fetchProfileFeed();
     this.commentsService.getComments('tweetComments');
     this.commentsService.getComments('replyComments');
   }
