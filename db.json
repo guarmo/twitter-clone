@@ -30,7 +30,9 @@
         "value": false,
         "retweetCount": 0
       },
-      "likes": [],
+      "likes": [
+        1
+      ],
       "commentsCount": 2
     },
     {
@@ -41,7 +43,9 @@
       "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "content": "This is another post",
       "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
-      "likes": [],
+      "likes": [
+        1
+      ],
       "retweet": {
         "value": true,
         "userRetweet": 1,

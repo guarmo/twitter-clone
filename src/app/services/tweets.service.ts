@@ -4,12 +4,12 @@ import { Subject } from 'rxjs';
 import { ITweet } from '../interfaces/interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TweetsService {
   feed = new Subject<ITweet[]>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   fetchFeed() {
     this.http
@@ -25,7 +25,17 @@ export class TweetsService {
       );
   }
 
-  likeTweet(tweetId: string | number): void {
-    console.log(tweetId)
+  likeTweet(userId: number | string, tweet: ITweet): void {
+    const uri = `http://localhost:3000/feed/${tweet.id}`;
+    const body = {
+      ...tweet,
+      likes: tweet.likes.includes(userId)
+        ? tweet.likes
+        : [...tweet.likes, userId],
+    };
+
+    this.http.put<ITweet[]>(uri, body).subscribe(() => {
+      this.fetchFeed();
+    });
   }
 }

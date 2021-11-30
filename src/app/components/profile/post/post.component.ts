@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
 import { ProfileService } from 'src/app/services/profile.service';
 import { CommentsService } from 'src/app/services/comments.service';
+import { TweetsService } from 'src/app/services/tweets.service';
 
 @Component({
   selector: 'app-post',
@@ -17,7 +18,7 @@ export class PostComponent implements OnInit {
   showInput: boolean = false;
 
   constructor(
-    private profileService: ProfileService,
+    private tweetService: TweetsService,
     private commentsService: CommentsService
   ) {}
 
@@ -56,6 +57,11 @@ export class PostComponent implements OnInit {
   ): void {
     alert('Comment liked');
     this.commentsService.likeComment(userId, type, comment);
+  }
+
+  onLikeTweet(userId: number | string, tweet: ITweet): void {
+    alert("Tweet liked");
+    this.tweetService.likeTweet(userId, tweet);
   }
 
   ngOnInit(): void {}

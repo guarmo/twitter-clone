@@ -32,11 +32,14 @@
         >
         <span>Retweet</span>
       </div>
-      <div class="buttons__container">
-        <mat-icon class="icon" aria-label="Example home icon"
+      <div (click)="onLikeTweet(user.id, tweet)" class="buttons__container">
+        <mat-icon
+          class="icon"
+          [ngClass]="{ 'liked': tweet.likes.includes(user.id) }"
+          aria-label="Example home icon"
           >favorite_border</mat-icon
         >
-        <span>Like</span>
+        <span [ngClass]="{ 'liked': tweet.likes.includes(user.id) }">Like</span>
       </div>
       <div class="buttons__container">
         <mat-icon class="icon" aria-label="Example home icon"
@@ -81,14 +84,8 @@
           <h1>{{ comment.content }}</h1>
           <div class="comment__content__bottom">
             <div
-              (click)="
-                onCommentLike(
-                  user.id,
-                  'tweetComments',
-                  comment
-                )
-              "
-              [ngClass]="{'like': comment.likes.includes(user.id)}"
+              (click)="onCommentLike(user.id, 'tweetComments', comment)"
+              [ngClass]="{ like: comment.likes.includes(user.id) }"
               class="with-icon like"
             >
               <mat-icon class="icon" aria-label="Example home icon"

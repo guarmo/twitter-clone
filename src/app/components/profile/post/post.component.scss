@@ -76,6 +76,10 @@
         cursor: pointer;
         width: 100%;
 
+        .liked {
+          color: $custom-red;
+        }
+
         &:hover {
           background-color: $lighter-gray;
         }
