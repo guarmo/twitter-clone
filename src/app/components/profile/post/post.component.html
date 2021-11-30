@@ -53,16 +53,16 @@
       #commentForm="ngForm"
     >
       <img class="userPicture" src="{{ user.picture }}" alt="" />
-      <div class="form-group">
+      <ng-container class="form-group">
         <input
           type="text"
           id="userInput"
           name="userInput"
-          class="form-control"
+          class="form-control input"
           placeholder="Tweet your reply"
           ngModel
         />
-      </div>
+      </ng-container>
     </form>
   </div>
   <div class="post__bottom">
