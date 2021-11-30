@@ -80,11 +80,24 @@
           </div>
           <h1>{{ comment.content }}</h1>
           <div class="comment__content__bottom">
-            <mat-icon class="icon" aria-label="Example home icon"
-              >favorite_border</mat-icon
-            >
-            <h1>Like</h1>
+            <div class="with-icon">
+              <mat-icon class="icon" aria-label="Example home icon"
+                >favorite_border</mat-icon
+              >
+              <h1>Like</h1>
+            </div>
             <h1>{{ comment.likes }} Likes</h1>
+
+            <div
+              (click)="onCommentDelete(comment.id)"
+              *ngIf="comment.user === user.id"
+              class="with-icon"
+            >
+              <mat-icon class="icon" aria-label="Example home icon"
+                >delete_outline</mat-icon
+              >
+              <h1>Delete</h1>
+            </div>
           </div>
         </div>
       </ng-container>

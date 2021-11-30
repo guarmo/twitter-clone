@@ -60,26 +60,6 @@
       "content": "This is a comment",
       "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "likes": 0
-    },
-    {
-      "id": 2,
-      "user": 1,
-      "postId": 1,
-      "userName": "Daniel Jensen",
-      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "This is another comment",
-      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
-      "likes": 0
-    },
-    {
-      "id": "97356d0d-413f-4220-ac33-9263d0cc275a",
-      "user": 1,
-      "postId": 1,
-      "userName": "Daniel Jensen",
-      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "This is a comment",
-      "date": "2021-11-30T10:44:33.226Z",
-      "likes": 0
     }
   ],
   "replyComments": []

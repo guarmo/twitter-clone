@@ -40,5 +40,10 @@ export class PostComponent implements OnInit {
     }
   }
 
+  onCommentDelete(commentId: string | number): void {
+    alert("Delete comment?");
+    this.profileService.deleteComment("tweetComments", commentId);
+  }
+
   ngOnInit(): void {}
 }

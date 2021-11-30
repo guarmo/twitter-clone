@@ -138,6 +138,11 @@
           display: flex;
           align-items: center;
 
+          .with-icon {
+            display: flex;
+            cursor: pointer;
+          }
+
           h1, .icon {
             color: $light-gray;
             font-size: 13px;

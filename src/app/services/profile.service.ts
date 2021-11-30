@@ -62,7 +62,18 @@ export class ProfileService {
     const uri = `http://localhost:3000/${type}`;
     const body = comment;
 
-    this.http.post<ITweet>(uri, body).subscribe(() => {
+    this.http.post<IComment>(uri, body).subscribe(() => {
+      this.getComments(type);
+    });
+  }
+
+  deleteComment(
+    type: 'tweetComments' | 'replyComments',
+    commentId: number | string
+  ): void {
+    const uri = `http://localhost:3000/${type}/${commentId}`;
+
+    this.http.delete<IComment>(uri).subscribe(() => {
       this.getComments(type);
     });
   }
