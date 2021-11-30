@@ -21,9 +21,9 @@
     {
       "id": 1,
       "user": 2,
-      "userName":"Peyton Lyons",
+      "userName": "Peyton Lyons",
       "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-      "date": "24 August at 20:43",
+      "date": 1638267731090,
       "content": "Traveling - leaves you speechless, then turns you into a storyteller",
       "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
       "retweet": {
@@ -36,9 +36,9 @@
     {
       "id": 2,
       "user": 2,
-      "userName":"Daniel Jensen",
+      "userName": "Daniel Jensen",
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "date": "24 August at 22:43",
+      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "content": "This is another post",
       "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
       "likes": 0,
@@ -52,25 +52,35 @@
   ],
   "tweetComments": [
     {
+      "id": 1,
       "user": 2,
       "postId": 1,
       "userName": "Peyton Lyons",
       "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
       "content": "This is a comment",
-      "date": "24 August at 23:23",
+      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "likes": 0
     },
     {
+      "id": 2,
       "user": 1,
       "postId": 1,
       "userName": "Daniel Jensen",
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "content": "This is another comment",
-      "date": "24 August at 23:43",
+      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
+      "likes": 0
+    },
+    {
+      "id": "97356d0d-413f-4220-ac33-9263d0cc275a",
+      "user": 1,
+      "postId": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "This is a comment",
+      "date": "2021-11-30T10:44:33.226Z",
       "likes": 0
     }
   ],
-  "replyComments": [
-
-  ]
+  "replyComments": []
 }

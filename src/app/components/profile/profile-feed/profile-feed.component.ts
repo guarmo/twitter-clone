@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
 import { ProfileService } from 'src/app/services/profile.service';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile-feed',

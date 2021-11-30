@@ -8,12 +8,13 @@ export interface IProfile {
   }
 
   export interface IComment {
+    id: number | string,
     user: number,
     postId: number,
     userName: string,
     userPicture: string,
     content: string,
-    date: string
+    date: Date
     likes: number
   }
 
@@ -28,7 +29,7 @@ export interface IProfile {
     user: number,
     userName: string,
     userPicture: string,
-    date: string,
+    date: Date,
     content: string,
     likes: number,
     retweet: IRetweet,

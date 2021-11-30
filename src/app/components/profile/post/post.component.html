@@ -4,7 +4,7 @@
       <img class="userPicture" src="{{ tweet.userPicture }}" alt="" />
       <div>
         <h1 class="name">{{ tweet?.userName }}</h1>
-        <p class="date">{{ tweet?.date }}</p>
+        <p class="date">{{ tweet?.date | date }}</p>
       </div>
     </div>
     <p>
@@ -76,7 +76,7 @@
         <div class="comment__content">
           <div class="comment__content__top">
             <h1 class="username">{{ comment.userName }}</h1>
-            <h1 class="date">{{ comment.date }}</h1>
+            <h1 class="date">{{ comment.date | date }}</h1>
           </div>
           <h1>{{ comment.content }}</h1>
           <div class="comment__content__bottom">

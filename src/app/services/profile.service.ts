@@ -58,20 +58,12 @@ export class ProfileService {
       });
   }
 
-  addComment(
-    tweetId: number,
-    type: 'tweetComments' | 'replyComments',
-    comment: IComment
-  ): void {
-    this.http
-      .post<ITweet>(`http://localhost:3000/${type}/${tweetId}`, {
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify(comment),
-      })
-      .subscribe(() => {
-        this.tweetComments.next();
-      });
+  addComment(type: 'tweetComments' | 'replyComments', comment: IComment): void {
+    const uri = `http://localhost:3000/${type}`;
+    const body = comment;
+
+    this.http.post<ITweet>(uri, body).subscribe(() => {
+      this.getComments(type);
+    });
   }
 }
