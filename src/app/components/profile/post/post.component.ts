@@ -31,9 +31,9 @@ export class PostComponent implements OnInit {
         userPicture: this.user.picture,
         content: form.controls.userInput.value,
         date: new Date(),
-        likes: 0
-      }
-      this.profileService.addComment("tweetComments", comment);
+        likes: [],
+      };
+      this.profileService.addComment('tweetComments', comment);
       form.controls.userInput.reset();
     } else {
       alert('Please add a comment');
@@ -41,8 +41,21 @@ export class PostComponent implements OnInit {
   }
 
   onCommentDelete(commentId: string | number): void {
-    alert("Delete comment?");
-    this.profileService.deleteComment("tweetComments", commentId);
+    alert('Delete comment?');
+    this.profileService.deleteComment('tweetComments', commentId);
+  }
+
+  onCommentLike(
+    userId: number | string,
+    type: 'tweetComments' | 'replyComments',
+    comment: IComment
+  ): void {
+    alert('Comment liked');
+    this.profileService.likeComment(
+      userId,
+      type,
+      comment
+    );
   }
 
   ngOnInit(): void {}

@@ -30,7 +30,7 @@
         "value": false,
         "retweetCount": 0
       },
-      "likes": 0,
+      "likes": [],
       "commentsCount": 2
     },
     {
@@ -41,7 +41,7 @@
       "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "content": "This is another post",
       "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
-      "likes": 0,
+      "likes": [],
       "retweet": {
         "value": true,
         "userRetweet": 1,
@@ -52,16 +52,6 @@
   ],
   "tweetComments": [
     {
-      "id": 1,
-      "user": 2,
-      "postId": 1,
-      "userName": "Peyton Lyons",
-      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-      "content": "This is a comment",
-      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
-      "likes": 0
-    },
-    {
       "id": "faa625a3-d0cd-4114-8d88-7ce3813d2c09",
       "user": 1,
       "postId": 1,
@@ -69,7 +59,21 @@
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "content": "This is a comment",
       "date": "2021-11-30T13:23:56.418Z",
-      "likes": 0
+      "likes": [
+        1
+      ]
+    },
+    {
+      "id": "9e465923-3056-4cf1-a088-1d91b81966aa",
+      "user": 1,
+      "postId": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "New comment",
+      "date": "2021-11-30T14:11:47.899Z",
+      "likes": [
+        1
+      ]
     }
   ],
   "replyComments": []

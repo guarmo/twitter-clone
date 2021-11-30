@@ -80,7 +80,17 @@
           </div>
           <h1>{{ comment.content }}</h1>
           <div class="comment__content__bottom">
-            <div class="with-icon">
+            <div
+              (click)="
+                onCommentLike(
+                  user.id,
+                  'tweetComments',
+                  comment
+                )
+              "
+              [ngClass]="{'like': comment.likes.includes(user.id)}"
+              class="with-icon like"
+            >
               <mat-icon class="icon" aria-label="Example home icon"
                 >favorite_border</mat-icon
               >

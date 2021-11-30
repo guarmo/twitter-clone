@@ -143,6 +143,12 @@
             cursor: pointer;
           }
 
+          .like {
+            .icon, h1 {
+              color: $custom-red;
+            }
+          }
+
           h1, .icon {
             color: $light-gray;
             font-size: 13px;

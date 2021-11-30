@@ -46,7 +46,7 @@ export class ProfileService {
   getComments(type: 'tweetComments' | 'replyComments'): void {
     this.http
       .get<IComment[]>(`http://localhost:3000/${type}`)
-      .pipe(tap((response) => console.log(response)))
+      // .pipe(tap((response) => console.log(response)))
       .subscribe((comments) => {
         if (type === 'tweetComments') {
           this.tweetComments.next(comments);
@@ -74,6 +74,23 @@ export class ProfileService {
     const uri = `http://localhost:3000/${type}/${commentId}`;
 
     this.http.delete<IComment>(uri).subscribe(() => {
+      this.getComments(type);
+    });
+  }
+
+  likeComment(
+    userId: number | string,
+    type: 'tweetComments' | 'replyComments',
+    comment: IComment
+  ): void {
+    const uri = `http://localhost:3000/${type}/${comment.id}`;
+    const body = {
+      ...comment,
+      likes: comment.likes.includes(userId)
+        ? comment.likes
+        : [...comment.likes, userId],
+    };
+    this.http.put<IComment>(uri, body).subscribe(() => {
       this.getComments(type);
     });
   }

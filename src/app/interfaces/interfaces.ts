@@ -15,7 +15,7 @@ export interface IProfile {
     userPicture: string,
     content: string,
     date: Date
-    likes: number
+    likes: (number | string)[]
   }
 
   interface IRetweet {
@@ -31,7 +31,7 @@ export interface IProfile {
     userPicture: string,
     date: Date,
     content: string,
-    likes: number,
+    likes: (number | string)[],
     retweet: IRetweet,
     commentsCount: number
   }
