@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { v4 as uuidv4 } from 'uuid';
 import { NgForm } from '@angular/forms';
 import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
 import { ProfileService } from 'src/app/services/profile.service';
-import { v4 as uuidv4 } from 'uuid';
+import { CommentsService } from 'src/app/services/comments.service';
 
 @Component({
   selector: 'app-post',
@@ -15,7 +16,10 @@ export class PostComponent implements OnInit {
   @Input('tweetComments') tweetComments: IComment[];
   showInput: boolean = false;
 
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private profileService: ProfileService,
+    private commentsService: CommentsService
+  ) {}
 
   onShowInput(): void {
     this.showInput = !this.showInput;
@@ -33,7 +37,7 @@ export class PostComponent implements OnInit {
         date: new Date(),
         likes: [],
       };
-      this.profileService.addComment('tweetComments', comment);
+      this.commentsService.addComment('tweetComments', comment);
       form.controls.userInput.reset();
     } else {
       alert('Please add a comment');
@@ -42,7 +46,7 @@ export class PostComponent implements OnInit {
 
   onCommentDelete(commentId: string | number): void {
     alert('Delete comment?');
-    this.profileService.deleteComment('tweetComments', commentId);
+    this.commentsService.deleteComment('tweetComments', commentId);
   }
 
   onCommentLike(
@@ -51,11 +55,7 @@ export class PostComponent implements OnInit {
     comment: IComment
   ): void {
     alert('Comment liked');
-    this.profileService.likeComment(
-      userId,
-      type,
-      comment
-    );
+    this.commentsService.likeComment(userId, type, comment);
   }
 
   ngOnInit(): void {}

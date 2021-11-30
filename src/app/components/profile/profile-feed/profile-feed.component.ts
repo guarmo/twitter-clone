@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
 import { ProfileService } from 'src/app/services/profile.service';
+import { CommentsService } from 'src/app/services/comments.service';
 
 @Component({
   selector: 'app-profile-feed',
@@ -12,7 +13,10 @@ export class ProfileFeedComponent implements OnInit {
   user: IProfile;
   tweetComments: IComment[];
 
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private profileService: ProfileService,
+    private commentsService: CommentsService
+  ) {}
 
   ngOnInit(): void {
     this.profileService.feed
@@ -35,7 +39,7 @@ export class ProfileFeedComponent implements OnInit {
     //   this.user = profile;
     // });
 
-    this.profileService.tweetComments.subscribe(
+    this.commentsService.tweetComments.subscribe(
       (tweetComments) => (this.tweetComments = tweetComments)
     );
   }
