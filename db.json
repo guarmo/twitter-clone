@@ -72,6 +72,16 @@
       "content": "New comment",
       "date": "2021-11-30T14:11:47.899Z",
       "likes": []
+    },
+    {
+      "id": "6a980cb4-f5bc-4e6a-9a07-b3a605f6fa11",
+      "user": 1,
+      "postId": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "This is a comment",
+      "date": "2021-11-30T14:29:22.965Z",
+      "likes": []
     }
   ],
   "replyComments": []

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { IProfile, ITweet, IComment } from '../interfaces/interfaces';
+import { IComment } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
