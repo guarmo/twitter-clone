@@ -31,5 +31,6 @@ export interface IProfile {
     date: string,
     content: string,
     likes: number,
-    retweet: IRetweet
+    retweet: IRetweet,
+    commentsCount: number
   }

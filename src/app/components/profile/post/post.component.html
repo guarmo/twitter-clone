@@ -13,7 +13,7 @@
     <div class="header__bottom">
       <h1>{{ tweet.likes }} Likes</h1>
       <h1>{{ tweet.retweet.retweetCount }} Retweets</h1>
-      <h1>{{ tweet.comments.length }} Comments</h1>
+      <h1>{{ tweet.commentsCount }} Comments</h1>
     </div>
   </div>
   <div class="post__middle">
@@ -52,40 +52,42 @@
       class="userInput"
       #commentForm="ngForm"
     >
-    <img class="userPicture" src="{{ user.picture }}" alt="" />
-    <div class="form-group">
-      <input
-        type="text"
-        id="userInput"
-        name="userInput"
-        class="form-control"
-        placeholder="Tweet your reply"
-        ngModel
-      />
-    </div>
+      <img class="userPicture" src="{{ user.picture }}" alt="" />
+      <div class="form-group">
+        <input
+          type="text"
+          id="userInput"
+          name="userInput"
+          class="form-control"
+          placeholder="Tweet your reply"
+          ngModel
+        />
+      </div>
     </form>
   </div>
   <div class="post__bottom">
-    <div class="comment" *ngFor="let comment of tweet.comments">
-      <img
-        class="userPicture"
-        src="{{ comment.userPicture }}"
-        alt="User picture"
-      />
-      <div class="comment__content">
-        <div class="comment__content__top">
-          <h1 class="username">{{ comment.userName }}</h1>
-          <h1 class="date">{{ comment.date }}</h1>
+    <div class="comment" *ngFor="let comment of tweetComments">
+      <ng-container *ngIf="tweet.id === comment.postId">
+        <img
+          class="userPicture"
+          src="{{ comment.userPicture }}"
+          alt="User picture"
+        />
+        <div class="comment__content">
+          <div class="comment__content__top">
+            <h1 class="username">{{ comment.userName }}</h1>
+            <h1 class="date">{{ comment.date }}</h1>
+          </div>
+          <h1>{{ comment.content }}</h1>
+          <div class="comment__content__bottom">
+            <mat-icon class="icon" aria-label="Example home icon"
+              >favorite_border</mat-icon
+            >
+            <h1>Like</h1>
+            <h1>{{ comment.likes }} Likes</h1>
+          </div>
         </div>
-        <h1>{{ comment.content }}</h1>
-        <div class="comment__content__bottom">
-          <mat-icon class="icon" aria-label="Example home icon"
-            >favorite_border</mat-icon
-          >
-          <h1>Like</h1>
-          <h1>{{ comment.likes }} Likes</h1>
-        </div>
-      </div>
+      </ng-container>
     </div>
   </div>
 </div>

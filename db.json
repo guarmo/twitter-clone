@@ -30,7 +30,8 @@
         "value": false,
         "retweetCount": 0
       },
-      "likes": 0
+      "likes": 0,
+      "commentsCount": 2
     },
     {
       "id": 2,
@@ -45,7 +46,8 @@
         "value": true,
         "userRetweet": 1,
         "retweetCount": 1
-      }
+      },
+      "commentsCount": 0
     }
   ],
   "tweetComments": [

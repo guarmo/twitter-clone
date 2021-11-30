@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { IProfile, ITweet, IComment } from '../interfaces/interfaces';
 
 @Injectable({
@@ -18,7 +18,7 @@ export class ProfileService {
   fetchUser() {
     this.http
       .get<IProfile>(`http://localhost:3000/users/1`)
-      .pipe(tap((response) => console.log(response)))
+      // .pipe(tap((response) => console.log(response)))
       .subscribe(
         (response) => {
           this.profile.next(response);
@@ -32,7 +32,7 @@ export class ProfileService {
   fetchUserFeed() {
     this.http
       .get<ITweet[]>('http://localhost:3000/feed')
-      .pipe(tap((response) => console.log(response)))
+      // .pipe(tap((response) => console.log(response)))
       .subscribe(
         (response) => {
           this.feed.next(response);
@@ -46,6 +46,7 @@ export class ProfileService {
   getComments(type: 'tweetComments' | 'replyComments'): void {
     this.http
       .get<IComment[]>(`http://localhost:3000/${type}`)
+      .pipe(tap((response) => console.log(response)))
       .subscribe((comments) => {
         if (type === 'tweetComments') {
           this.tweetComments.next(comments);
@@ -57,24 +58,20 @@ export class ProfileService {
       });
   }
 
-  commentTweet(tweetId: number): Observable<ITweet> {
-    return this.http.post<ITweet>(
-      `http://localhost:3000/tweetComments/${tweetId}`,
-      {
+  addComment(
+    tweetId: number,
+    type: 'tweetComments' | 'replyComments',
+    comment: IComment
+  ): void {
+    this.http
+      .post<ITweet>(`http://localhost:3000/${type}/${tweetId}`, {
         headers: {
           'Content-type': 'application/json',
         },
-        body: {
-          user: 1,
-          postId: 2,
-          userName: 'Daniel Jensen',
-          userPicture:
-            'https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg',
-          content: 'Comment posted',
-          date: '26 August at 11:22',
-          likes: 0,
-        },
-      }
-    );
+        body: JSON.stringify(comment),
+      })
+      .subscribe(() => {
+        this.tweetComments.next();
+      });
   }
 }
