@@ -56,19 +56,16 @@ export class TweetsService {
   }
 
   saveTweet(userId: number | string, tweet: ITweet): void {
-    console.log("save tweet");
+    const uri = `http://localhost:3000/feed/${tweet.id}`;
 
-    // const uri = `http://localhost:3000/feed`;
-    // const updatedFeed = this.feed.pipe(filter(el => el.id !== tweet.id));
+    const body: ITweet = {
+      ...tweet,
+      saved: !tweet.saved.includes(userId) ? [...tweet.saved, userId] : tweet.saved,
+      }
 
-    // const body: ITweet = {
-    //   ...tweet,
-    //   saved: !tweet.saved.includes(userId) ? [...tweet.saved, userId] : tweet.saved,
-    //   }
-
-    // this.http.post(uri, body).subscribe(() => {
-    //   this.fetchFeed();
-    // });
+    this.http.put(uri, body).subscribe(() => {
+      this.fetchFeed();
+    });
   }
 
   retweet(userId: number | string, tweet: ITweet): void {

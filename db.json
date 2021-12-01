@@ -38,7 +38,9 @@
         1
       ],
       "commentsCount": 2,
-      "saved": [1]
+      "saved": [
+        1
+      ]
     },
     {
       "id": 2,
@@ -57,7 +59,9 @@
         "retweetCount": 0
       },
       "commentsCount": 0,
-      "saved": []
+      "saved": [
+        1
+      ]
     }
   ],
   "tweetComments": [
@@ -91,6 +95,16 @@
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "content": "This is a comment",
       "date": "2021-11-30T14:29:22.965Z",
+      "likes": []
+    },
+    {
+      "id": "5250ee16-2da9-472d-8a78-6266f6f49950",
+      "user": 1,
+      "postId": 2,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "content here",
+      "date": "2021-12-01T08:00:08.642Z",
       "likes": []
     }
   ],
