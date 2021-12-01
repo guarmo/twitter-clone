@@ -30,9 +30,11 @@
       "retweet": {
         "value": true,
         "userRetweet": [
+          1,
+          1,
           1
         ],
-        "retweetCount": 2
+        "retweetCount": 4
       },
       "likes": [
         1
@@ -50,18 +52,14 @@
       "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "content": "This is another post",
       "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
-      "likes": [
-        1
-      ],
+      "likes": [],
       "retweet": {
         "value": false,
         "userRetweet": [],
         "retweetCount": 0
       },
       "commentsCount": 0,
-      "saved": [
-        1
-      ]
+      "saved": []
     }
   ],
   "tweetComments": [
@@ -76,16 +74,6 @@
       "likes": [
         1
       ]
-    },
-    {
-      "id": "9e465923-3056-4cf1-a088-1d91b81966aa",
-      "user": 1,
-      "postId": 1,
-      "userName": "Daniel Jensen",
-      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "New comment",
-      "date": "2021-11-30T14:11:47.899Z",
-      "likes": []
     },
     {
       "id": "6a980cb4-f5bc-4e6a-9a07-b3a605f6fa11",
