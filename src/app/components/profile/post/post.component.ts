@@ -38,16 +38,16 @@ export class PostComponent implements OnInit {
         date: new Date(),
         likes: [],
       };
-      this.commentsService.addComment('tweetComments', comment);
+      this.commentsService.addComment('tweetComments', this.tweet, comment);
       form.controls.userInput.reset();
     } else {
       alert('Please add a comment');
     }
   }
 
-  onCommentDelete(commentId: string | number): void {
+  onCommentDelete(tweet: ITweet, commentId: string | number): void {
     alert('Delete comment?');
-    this.commentsService.deleteComment('tweetComments', commentId);
+    this.commentsService.deleteComment('tweetComments', tweet, commentId);
   }
 
   onCommentLike(

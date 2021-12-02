@@ -39,7 +39,7 @@
       "likes": [
         1
       ],
-      "commentsCount": 2,
+      "commentsCount": 1,
       "saved": [
         1
       ]
@@ -52,47 +52,39 @@
       "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
       "content": "This is another post",
       "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
-      "likes": [],
+      "likes": [
+        1
+      ],
       "retweet": {
-        "value": false,
-        "userRetweet": [],
-        "retweetCount": 0
+        "value": true,
+        "userRetweet": [
+          1
+        ],
+        "retweetCount": 1
       },
-      "commentsCount": 0,
+      "commentsCount": 1,
       "saved": []
     }
   ],
   "tweetComments": [
     {
-      "id": "faa625a3-d0cd-4114-8d88-7ce3813d2c09",
+      "id": "881775fc-90fe-40de-9aa2-d4945ced3dc6",
       "user": 1,
       "postId": 1,
       "userName": "Daniel Jensen",
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "This is a comment",
-      "date": "2021-11-30T13:23:56.418Z",
-      "likes": [
-        1
-      ]
-    },
-    {
-      "id": "6a980cb4-f5bc-4e6a-9a07-b3a605f6fa11",
-      "user": 1,
-      "postId": 1,
-      "userName": "Daniel Jensen",
-      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "This is a comment",
-      "date": "2021-11-30T14:29:22.965Z",
+      "content": "content here",
+      "date": "2021-12-02T14:20:13.967Z",
       "likes": []
     },
     {
-      "id": "5250ee16-2da9-472d-8a78-6266f6f49950",
+      "id": "ae8ee367-b8f2-45a3-ac27-e8e55fcedab3",
       "user": 1,
       "postId": 2,
       "userName": "Daniel Jensen",
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "content": "content here",
-      "date": "2021-12-01T08:00:08.642Z",
+      "date": "2021-12-02T14:20:19.359Z",
       "likes": []
     }
   ],
@@ -109,6 +101,16 @@
       "retweet": [],
       "likes": [],
       "commentsCount": 2
+    }
+  ],
+  "commentCount": [
+    {
+      "postId": 1,
+      "count": 2
+    },
+    {
+      "postId": 2,
+      "count": 0
     }
   ]
 }

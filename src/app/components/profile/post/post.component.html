@@ -119,7 +119,7 @@
             <h1>{{ comment.likes }} Likes</h1>
 
             <div
-              (click)="onCommentDelete(comment.id)"
+              (click)="onCommentDelete(tweet, comment.id)"
               *ngIf="comment.user === user.id"
               class="with-icon"
             >
