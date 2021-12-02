@@ -15,6 +15,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from './components/home/home/home.component';
 import { BookmarksComponent } from './components/bookmarks/bookmarks/bookmarks.component';
 import { ExploreComponent } from './components/explore/explore/explore.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const materialModules = [
   MatIconModule
@@ -25,8 +26,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileFeedComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'bookmarks', component: BookmarksComponent },
-  // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  // { path: '**', redirectTo: '/not-found' }
+  { path: 'not-found', component: NotFoundComponent, data: {message: 'Page not found!'} },
+  { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
@@ -39,7 +40,8 @@ const routes: Routes = [
     PostComponent,
     HomeComponent,
     BookmarksComponent,
-    ExploreComponent
+    ExploreComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
