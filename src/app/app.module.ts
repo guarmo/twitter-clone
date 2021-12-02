@@ -11,9 +11,20 @@ import { PostComponent } from './components/profile/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from "@angular/router";
+import { HomeComponent } from './components/home/home/home.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks/bookmarks.component';
+import { ExploreComponent } from './components/explore/explore/explore.component';
 
 const materialModules = [
   MatIconModule
+];
+
+const routes: Routes = [
+  { path: '', component: HomeComponent},
+  { path: 'profile', component: ProfileFeedComponent },
+  { path: 'explore', component: ExploreComponent },
+  { path: 'bookmarks', component: BookmarksComponent }
 ];
 
 @NgModule({
@@ -24,14 +35,19 @@ const materialModules = [
     SidebarComponent,
     ProfileFeedComponent,
     PostComponent,
+    HomeComponent,
+    BookmarksComponent,
+    ExploreComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    RouterModule.forRoot(routes),
     ...materialModules
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

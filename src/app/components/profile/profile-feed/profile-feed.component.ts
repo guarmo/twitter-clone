@@ -22,27 +22,23 @@ export class ProfileFeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.tweetsService.feed
-      // .pipe(tap((results) => {}))
       .subscribe((results) => {
         this.feed = results;
       });
 
     this.profileService.profile
-      // .pipe(
-      //   tap((profile) => {
-      //     console.log(`Here ${profile.picture}`);
-      //   })
-      // )
       .subscribe((profile) => {
         this.user = profile;
       });
 
-    // .subscribe((profile) => {
-    //   this.user = profile;
-    // });
-
     this.commentsService.tweetComments.subscribe(
       (tweetComments) => (this.tweetComments = tweetComments)
     );
+
+    this.profileService.fetchUser();
+    this.tweetsService.fetchFeed();
+    this.tweetsService.fetchProfileFeed();
+    this.commentsService.getComments('tweetComments');
+    this.commentsService.getComments('replyComments');
   }
 }
