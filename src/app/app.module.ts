@@ -7,7 +7,7 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { HeaderComponent } from './components/profile/header/header.component';
 import { SidebarComponent } from './components/profile/sidebar/sidebar.component';
 import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
-import { PostComponent } from './components/profile/post/post.component';
+import { PostComponent } from './components/layout/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
