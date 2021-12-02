@@ -1,35 +1,181 @@
+@import "../../../../styles/variables/variables";
+@import "../../../../styles/variables/breakpoints";
+
 .post {
-    max-width: 100%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+  max-width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  .userPicture {
+    width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      object-fit: cover;
+      border-radius: 8px;
+  }
+
+  &__top {
     margin-bottom: 20px;
 
-    &__top {
+    .header {
+      display: flex;
+      align-items: center;
       margin-bottom: 20px;
 
-      .header {
+      .name {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .date {
+        font-size: 13px;
+        color: $light-gray;
+      }
+
+      &__bottom {
         display: flex;
-        align-items: center;
-        margin-bottom: 20px;
+        margin: 10px 0;
 
-          name {
-            margin-bottom: 5px;
-          }
+        h1 {
+          color: $light-gray;
+          font-size: 13px;
+          margin-left: 10px;
+        }
+
+        :nth-child(1) {
+          margin-left: 0;
+        }
       }
-
-      img {
-        width: 40px;
-        margin-right: 10px;
-      }
-    }
-
-    &__middle {
-      img {
-        max-width: 100%;
-      }
-    }
-
-    &__bottom {
     }
   }
+
+  &__middle {
+    img {
+      max-width: 100%;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 20px 0;
+
+      @media screen and (max-width: $breakpoint-small) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+
+        .saved {
+          color: $custom-blue;
+        }
+
+        .liked {
+          color: $custom-red;
+        }
+
+        .retweeted {
+          color: $custom-green;
+        }
+
+        &:hover {
+          background-color: $lighter-gray;
+        }
+
+        .icon {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .userInput {
+      display: flex;
+
+      .input {
+        width: 100%;
+        margin-left: 10px;
+        padding: 10px;
+        background-color: #fafafa;
+        border-radius: 8px;
+        border: none;
+        outline: transparent;
+        padding: 10px;
+
+        &::placeholder {
+          color: $light-gray;
+        }
+      }
+
+    }
+  }
+
+  &__bottom {
+    .comment {
+      display: flex;
+      margin: 20px 0;
+
+      &__content {
+        width: 100%;
+        margin-left: 10px;
+        padding: 10px;
+        background-color: #fafafa;
+        border-radius: 8px;
+
+        &__top {
+          display: flex;
+          margin-bottom: 10px;
+          font-size: 13px;
+
+          .username {
+            font-weight: bold;
+          }
+
+          .date {
+            color: $light-gray;
+            margin-left: 10px;
+          }
+        }
+
+        &__bottom {
+          display: flex;
+          align-items: center;
+
+          .with-icon {
+            display: flex;
+            cursor: pointer;
+          }
+
+          .like {
+            .icon, h1 {
+              color: $custom-red;
+            }
+          }
+
+          h1, .icon {
+            color: $light-gray;
+            font-size: 13px;
+            margin-top: 10px;
+            margin-right: 10px;
+            width: initial;
+            height: initial;
+          }
+
+          :nth-child(1) {
+            cursor: pointer;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

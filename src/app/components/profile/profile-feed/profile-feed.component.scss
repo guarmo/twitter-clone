@@ -7,27 +7,47 @@
   display: flex;
 
   @media screen and (max-width: $breakpoint-large) {
-    width: 90vw;
+    max-width: 90vw;
+  }
+
+  @media screen and (max-width: $breakpoint-medium) {
+    flex-direction: column;
   }
 
   &__left {
     width: 30%;
     background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      margin-right: 20px;
-      height: min-content;
+    border-radius: 5px;
+    margin-right: 20px;
+    height: min-content;
 
-      h1 {
-        margin-bottom: 15px;
-      }
+    @media screen and (max-width: $breakpoint-medium) {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
 
-      :last-child {
-        margin-bottom: 0;
+    h1 {
+      padding: 15px;
+      border: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lighter-gray;
       }
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__right {
     width: 70%;
+
+    @media screen and (max-width: $breakpoint-medium) {
+      width: 100%;
+    }
   }
 }

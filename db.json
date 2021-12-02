@@ -5,7 +5,7 @@
       "name": "Daniel Jensen",
       "following": 2650,
       "followers": 150,
-      "description": "Photographer & Filmmaker based in Copenhagen, Denmark",
+      "description": "Photographer and Filmmaker based in Copenhagen, Denmark",
       "picture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg"
     },
     {
@@ -14,31 +14,103 @@
       "following": 20,
       "followers": 15000,
       "description": "Just another user",
-      "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
-      "tweets": [
-        {
-          "id": 1,
-          "user": 1,
-          "date": "24 August at 20:43",
-          "content": "Traveling - leaves you speechless, then turns you into a storyteller"
-        }
-      ]
+      "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg"
     }
   ],
+  "profileFeed": [],
   "feed": [
     {
       "id": 1,
       "user": 2,
-      "date": "24 August at 20:43",
+      "userName": "Peyton Lyons",
+      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "date": 1638267731090,
       "content": "Traveling - leaves you speechless, then turns you into a storyteller",
-      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg"
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
+      "retweet": {
+        "value": true,
+        "userRetweet": [
+          1,
+          1,
+          1
+        ],
+        "retweetCount": 4
+      },
+      "likes": [
+        1
+      ],
+      "commentsCount": 1,
+      "saved": [
+        1
+      ]
     },
+    {
+      "id": 2,
+      "user": 2,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
+      "content": "This is another post",
+      "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
+      "likes": [
+        1
+      ],
+      "retweet": {
+        "value": true,
+        "userRetweet": [
+          1
+        ],
+        "retweetCount": 1
+      },
+      "commentsCount": 1,
+      "saved": []
+    }
+  ],
+  "tweetComments": [
+    {
+      "id": "881775fc-90fe-40de-9aa2-d4945ced3dc6",
+      "user": 1,
+      "postId": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "content here",
+      "date": "2021-12-02T14:20:13.967Z",
+      "likes": []
+    },
+    {
+      "id": "ae8ee367-b8f2-45a3-ac27-e8e55fcedab3",
+      "user": 1,
+      "postId": 2,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "content here",
+      "date": "2021-12-02T14:20:19.359Z",
+      "likes": []
+    }
+  ],
+  "replyComments": [],
+  "savedTweets": [
     {
       "id": 1,
       "user": 2,
-      "date": "24 August at 20:43",
+      "userName": "Peyton Lyons",
+      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "date": 1638267731090,
       "content": "Traveling - leaves you speechless, then turns you into a storyteller",
-      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg"
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
+      "retweet": [],
+      "likes": [],
+      "commentsCount": 2
+    }
+  ],
+  "commentCount": [
+    {
+      "postId": 1,
+      "count": 2
+    },
+    {
+      "postId": 2,
+      "count": 0
     }
   ]
 }

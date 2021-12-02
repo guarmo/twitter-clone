@@ -1,20 +1,136 @@
 <div class="post">
-    <div class="post__top">
-      <div class="header">
-        <img src="../../../../assets/images/profile.png" alt="" />
-        <div>
-          <h1 class="name">{{tweet?.user}}</h1>
-          <p class="date">{{tweet?.date}}</p>
-        </div>
+  <div class="post__top">
+    <div class="header">
+      <img class="userPicture" src="{{ tweet.userPicture }}" alt="" />
+      <div>
+        <h1 class="name">{{ tweet?.userName }}</h1>
+        <p class="date">{{ tweet?.date | date: "medium" }}</p>
       </div>
-      <p>
-        {{tweet?.content}}
-      </p>
     </div>
-    <div class="post__middle">
-      <img src="../../../../assets/images/banner.jpeg" alt="image" />
-    </div>
-    <div class="post__bottom">
-      <h1>Bottom</h1>
+    <p>
+      {{ tweet?.content }}
+    </p>
+    <div class="header__bottom">
+      <h1>{{ tweet.likes.length ? tweet.likes.length : 0 }} Likes</h1>
+      <h1>{{ tweet.retweet.retweetCount }} Retweets</h1>
+      <h1>{{ tweet.commentsCount }} Comments</h1>
     </div>
   </div>
+  <div class="post__middle">
+    <img src="../../../../assets/images/banner.jpeg" alt="image" />
+
+    <div class="buttons">
+      <div (click)="onShowInput()" class="buttons__container">
+        <mat-icon class="icon" aria-label="Example home icon"
+          >chat_bubble_outline</mat-icon
+        >
+        <span>Comment</span>
+      </div>
+      <div
+        (click)="
+          !tweet.retweet.userRetweet.includes(user.id) &&
+            onRetweet(user.id, tweet)
+        "
+        class="buttons__container"
+      >
+        <mat-icon
+          [ngClass]="
+            tweet.retweet.userRetweet.includes(user.id)
+              ? 'retweeted icon'
+              : 'icon'
+          "
+          class="icon"
+          aria-label="Example home icon"
+          >autorenew</mat-icon
+        >
+        <span
+          [ngClass]="{ retweeted: tweet.retweet.userRetweet.includes(user.id) }"
+          >Retweet</span
+        >
+      </div>
+      <div
+        (click)="!tweet.likes.includes(user.id) && onLikeTweet(user.id, tweet)"
+        class="buttons__container"
+      >
+        <mat-icon
+          [ngClass]="tweet.likes.includes(user.id) ? 'liked icon' : 'icon'"
+          aria-label="Example home icon"
+          >favorite_border</mat-icon
+        >
+        <span [ngClass]="{ liked: tweet.likes.includes(user.id) }">Like</span>
+      </div>
+      <div
+        (click)="!tweet.saved.includes(user.id) && onSaveTweet(user.id, tweet)"
+        class="buttons__container"
+      >
+        <mat-icon
+          [ngClass]="tweet.saved.includes(user.id) ? 'saved icon' : 'icon'"
+          aria-label="Example home icon"
+          >bookmark_border</mat-icon
+        >
+        <span [ngClass]="{ saved: tweet.saved.includes(user.id) }">Save</span>
+      </div>
+    </div>
+
+    <form
+      *ngIf="showInput"
+      (ngSubmit)="onSubmit(commentForm)"
+      class="userInput"
+      #commentForm="ngForm"
+    >
+      <img class="userPicture" src="{{ user.picture }}" alt="" />
+      <ng-container class="form-group">
+        <input
+          type="text"
+          id="userInput"
+          name="userInput"
+          class="form-control input"
+          placeholder="Tweet your reply"
+          ngModel
+        />
+      </ng-container>
+    </form>
+  </div>
+  <div class="post__bottom">
+    <div class="comment" *ngFor="let comment of tweetComments">
+      <ng-container *ngIf="tweet.id === comment.postId">
+        <img
+          class="userPicture"
+          src="{{ comment.userPicture }}"
+          alt="User picture"
+        />
+        <div class="comment__content">
+          <div class="comment__content__top">
+            <h1 class="username">{{ comment.userName }}</h1>
+            <h1 class="date">{{ comment.date | date: "medium" }}</h1>
+          </div>
+          <h1>{{ comment.content }}</h1>
+          <div class="comment__content__bottom">
+            <div
+              (click)="onCommentLike(user.id, 'tweetComments', comment)"
+              [ngClass]="{ like: comment.likes.includes(user.id) }"
+              class="with-icon like"
+            >
+              <mat-icon class="icon" aria-label="Example home icon"
+                >favorite_border</mat-icon
+              >
+              <h1>Like</h1>
+            </div>
+            <h1>{{ comment.likes }} Likes</h1>
+
+            <div
+              (click)="onCommentDelete(tweet, comment.id)"
+              *ngIf="comment.user === user.id"
+              class="with-icon"
+            >
+              <mat-icon class="icon" aria-label="Example home icon"
+                >delete_outline</mat-icon
+              >
+              <h1>Delete</h1>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,48 @@
 import { Component, OnInit } from '@angular/core';
-import { ITweet } from 'src/app/interfaces/interfaces';
+import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
 import { ProfileService } from 'src/app/services/profile.service';
-import { tap } from 'rxjs/operators';
+import { CommentsService } from 'src/app/services/comments.service';
+import { TweetsService } from 'src/app/services/tweets.service';
 
 @Component({
   selector: 'app-profile-feed',
   templateUrl: './profile-feed.component.html',
-  styleUrls: ['./profile-feed.component.scss']
+  styleUrls: ['./profile-feed.component.scss'],
 })
 export class ProfileFeedComponent implements OnInit {
   feed: ITweet[];
-  
-  constructor(private profileService: ProfileService) { }
+  user: IProfile;
+  tweetComments: IComment[];
+
+  constructor(
+    private profileService: ProfileService,
+    private commentsService: CommentsService,
+    private tweetsService: TweetsService
+  ) {}
 
   ngOnInit(): void {
-    this.profileService.feed.pipe(tap((results) => {
-    })).subscribe((results) => {
-      this.feed = results;
-    });
-  }
+    this.tweetsService.feed
+      // .pipe(tap((results) => {}))
+      .subscribe((results) => {
+        this.feed = results;
+      });
 
+    this.profileService.profile
+      // .pipe(
+      //   tap((profile) => {
+      //     console.log(`Here ${profile.picture}`);
+      //   })
+      // )
+      .subscribe((profile) => {
+        this.user = profile;
+      });
+
+    // .subscribe((profile) => {
+    //   this.user = profile;
+    // });
+
+    this.commentsService.tweetComments.subscribe(
+      (tweetComments) => (this.tweetComments = tweetComments)
+    );
+  }
 }
