@@ -9,6 +9,12 @@ import { SidebarComponent } from './components/profile/sidebar/sidebar.component
 import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
 import { PostComponent } from './components/profile/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+
+const materialModules = [
+  MatIconModule
+];
 
 @NgModule({
   declarations: [
@@ -23,6 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ...materialModules
   ],
   providers: [],
   bootstrap: [AppComponent]
