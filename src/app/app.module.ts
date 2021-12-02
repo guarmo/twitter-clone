@@ -24,7 +24,9 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'profile', component: ProfileFeedComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: 'bookmarks', component: BookmarksComponent }
+  { path: 'bookmarks', component: BookmarksComponent },
+  // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+  // { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
