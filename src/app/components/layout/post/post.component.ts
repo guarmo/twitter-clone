@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { NgForm } from '@angular/forms';
 import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
-import { ProfileService } from 'src/app/services/profile.service';
 import { CommentsService } from 'src/app/services/comments.service';
 import { TweetsService } from 'src/app/services/tweets.service';
 

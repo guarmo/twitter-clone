@@ -37,6 +37,7 @@ export class BookmarksComponent implements OnInit, OnDestroy {
       this.user = res;
     });
 
+    this.commentsService.getComments("tweetComments");
     this.tweetCommentsSub = this.commentsService.tweetComments.subscribe(
       (tweetComments) => (this.tweetComments = tweetComments)
     );
