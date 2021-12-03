@@ -91,7 +91,7 @@
       </ng-container>
     </form>
   </div>
-  <div class="post__bottom">
+  <div *ngIf="user" class="post__bottom">
     <div class="comment" *ngFor="let comment of tweetComments">
       <ng-container *ngIf="tweet.id === comment.postId">
         <img

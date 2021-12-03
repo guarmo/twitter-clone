@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { ITweet } from '../interfaces/interfaces';
-import { filter, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +15,6 @@ export class TweetsService {
   fetchFeed() {
     this.http
       .get<ITweet[]>('http://localhost:3000/feed')
-      // .pipe(tap((response) => console.log(response)))
       .subscribe(
         (response) => {
           this.feed.next(response);
@@ -30,7 +28,6 @@ export class TweetsService {
   fetchProfileFeed() {
     this.http
       .get<ITweet[]>('http://localhost:3000/profileFeed')
-      // .pipe(tap((response) => console.log(response)))
       .subscribe(
         (response) => {
           this.profileFeed.next(response);

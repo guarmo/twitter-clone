@@ -6,7 +6,7 @@
     <h1>Media</h1>
     <h1>Likes</h1>
   </div>
-  <div class="feed__right">
+  <div *ngIf="user" class="feed__right">
     <app-post
       [tweet]="tweet"
       [user]="user"
