@@ -4,7 +4,6 @@ import { ProfileService } from 'src/app/services/profile.service';
 import { CommentsService } from 'src/app/services/comments.service';
 import { TweetsService } from 'src/app/services/tweets.service';
 import { Subscription } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-feed',
@@ -29,7 +28,6 @@ export class FeedComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.tweetsService.fetchFeed();
     this.feedSub = this.tweetsService.feed
-    .pipe(tap((res) => console.log(res)))
     .subscribe((results) => {
       this.feed = results;
     });
@@ -41,8 +39,16 @@ export class FeedComponent implements OnInit, OnDestroy {
 
     this.commentsService.getComments('tweetComments');
     this.tweetCommentsSub = this.commentsService.tweetComments
-      // .pipe(tap((res) => console.log(res)))
       .subscribe((tweetComments) => (this.tweetComments = tweetComments));
+
+    if (this.type === 'bookmarks') {
+      // @todo
+
+      // console.log(this.feed);
+      // this.feed = this.feed.filter(tweet => {
+      //   tweet.saved.includes(this.user.id);
+      // })
+    }
   }
 
   ngOnDestroy(): void {

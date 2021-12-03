@@ -17,7 +17,6 @@ export class CommentsService {
   getComments(type: 'tweetComments' | 'replyComments'): void {
     this.http
       .get<IComment[]>(`http://localhost:3000/${type}`)
-      .pipe(tap((response) => console.log(response)))
       .subscribe((comments) => {
         if (type === 'tweetComments') {
           this.tweetComments.next(comments);

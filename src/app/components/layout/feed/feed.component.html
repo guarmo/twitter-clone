@@ -5,7 +5,7 @@
     <h1>Media</h1>
     <h1>Likes</h1>
   </div>
-  <div *ngIf="user">
+  <ng-container *ngIf="user">
     <div class="feed__right">
       <app-post
         [tweet]="tweet"
@@ -14,20 +14,9 @@
         *ngFor="let tweet of feed"
       ></app-post>
     </div>
-    <div *ngIf="type === 'bookmarks'" class="feed__right">
-      <div *ngIf="feed && feed.length > 0; else elseBlock">
-        <ng-template *ngFor="let tweet of feed">
-          <app-post
-            [tweet]="tweet"
-            [user]="user"
-            [tweetComments]="tweetComments"
-            *ngIf="tweet.saved.includes(user.id)"
-          ></app-post>
-        </ng-template>
-      </div>
-      <ng-template #elseBlock>
-        <h1 class="title">No bookmarks so far</h1>
-      </ng-template>
-    </div>
-  </div>
+  </ng-container>
 </div>
+
+<!-- <ng-template #elseBlock>
+  <h1 class="title">No bookmarks so far</h1>
+</ng-template> -->
