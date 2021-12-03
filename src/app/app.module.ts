@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { HeaderComponent } from './components/profile/header/header.component';
 import { SidebarComponent } from './components/profile/sidebar/sidebar.component';
-import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
+import { FeedComponent } from './components/layout/feed/feed.component';
 import { PostComponent } from './components/layout/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home/home.component';
 import { BookmarksComponent } from './components/bookmarks/bookmarks/bookmarks.component';
 import { ExploreComponent } from './components/explore/explore/explore.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
 
 const materialModules = [
   MatIconModule
@@ -36,12 +37,13 @@ const routes: Routes = [
     NavbarComponent,
     HeaderComponent,
     SidebarComponent,
-    ProfileFeedComponent,
+    FeedComponent,
     PostComponent,
     HomeComponent,
     BookmarksComponent,
     ExploreComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProfileFeedComponent
   ],
   imports: [
     BrowserModule,

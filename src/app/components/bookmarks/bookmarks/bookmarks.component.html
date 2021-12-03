@@ -1,14 +1,1 @@
-<ng-container *ngIf="feed && feed.length > 0; else elseBlock">
-  <h1 class="title">Bookmarks</h1>
-  <div class="wrapper" *ngFor="let tweet of feed">
-    <app-post
-      [tweet]="tweet"
-      [user]="user"
-      [tweetComments]="tweetComments"
-      *ngIf="user && tweet.saved.includes(user.id)"
-    ></app-post>
-  </div>
-</ng-container>
-<ng-template #elseBlock>
-  <h1 class="title">No bookmarks so far</h1>
-</ng-template>
+<app-feed type="bookmarks"></app-feed>

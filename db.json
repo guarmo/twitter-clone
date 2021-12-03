@@ -39,7 +39,7 @@
       "likes": [
         1
       ],
-      "commentsCount": 2,
+      "commentsCount": 1,
       "saved": [
         1
       ]
@@ -87,16 +87,6 @@
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "content": "comment",
       "date": "2021-12-03T13:36:04.359Z",
-      "likes": []
-    },
-    {
-      "id": "74b8b5d4-8777-4e5b-9d43-e6299c988395",
-      "user": 1,
-      "postId": 1,
-      "userName": "Daniel Jensen",
-      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "content here",
-      "date": "2021-12-03T13:36:10.603Z",
       "likes": []
     }
   ],
