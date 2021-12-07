@@ -6,7 +6,7 @@
     <h1>Likes</h1>
   </div>
   <ng-container *ngIf="user">
-    <div class="feed__right">
+    <div *ngIf="feed?.length; else elseBlock" class="feed__right">
       <app-post
         [tweet]="tweet"
         [user]="user"
@@ -14,9 +14,8 @@
         *ngFor="let tweet of feed"
       ></app-post>
     </div>
+    <ng-template #elseBlock>
+      <h1 class="title">No bookmarks so far</h1>
+    </ng-template>
   </ng-container>
 </div>
-
-<!-- <ng-template #elseBlock>
-  <h1 class="title">No bookmarks so far</h1>
-</ng-template> -->

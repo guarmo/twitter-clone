@@ -2,35 +2,39 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { ITweet } from '../interfaces/interfaces';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TweetsService {
   feed = new Subject<ITweet[]>();
-  profileFeed = new Subject<ITweet[]>();
+  bookmarked = new Subject<ITweet[]>();
 
   constructor(private http: HttpClient) {}
 
   fetchFeed() {
-    this.http
-      .get<ITweet[]>('http://localhost:3000/feed')
-      .subscribe(
-        (response) => {
-          this.feed.next(response);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+    this.http.get<ITweet[]>('http://localhost:3000/feed').subscribe(
+      (response) => {
+        this.feed.next(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
-  fetchProfileFeed() {
+  fetchBookmarked() {
     this.http
-      .get<ITweet[]>('http://localhost:3000/profileFeed')
+      .get<ITweet[]>('http://localhost:3000/feed')
+      .pipe(
+        map((result: any) =>
+          result.filter((el: { saved: string | any[] }) => el.saved.length > 0)
+        )
+      )
       .subscribe(
         (response) => {
-          this.profileFeed.next(response);
+          this.bookmarked.next(response);
         },
         (error) => {
           console.log(error);
@@ -57,8 +61,10 @@ export class TweetsService {
 
     const body: ITweet = {
       ...tweet,
-      saved: !tweet.saved.includes(userId) ? [...tweet.saved, userId] : tweet.saved,
-      }
+      saved: !tweet.saved.includes(userId)
+        ? [...tweet.saved, userId]
+        : tweet.saved,
+    };
 
     this.http.put(uri, body).subscribe(() => {
       this.fetchFeed();
