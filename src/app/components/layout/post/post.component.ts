@@ -58,6 +58,11 @@ export class PostComponent implements OnInit {
     this.commentsService.likeComment(userId, type, comment);
   }
 
+  onDeleteTweet(tweetId: string | number): void {
+    alert("Tweet deleted");
+    this.tweetService.deleteTweet(tweetId);
+  }
+
   onLikeTweet(userId: number | string, tweet: ITweet): void {
     alert("Tweet liked");
     this.tweetService.likeTweet(userId, tweet);

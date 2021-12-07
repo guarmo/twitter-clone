@@ -17,6 +17,7 @@ import { BookmarksComponent } from './components/bookmarks/bookmarks/bookmarks.c
 import { ExploreComponent } from './components/explore/explore/explore.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfileFeedComponent } from './components/profile/profile-feed/profile-feed.component';
+import { AddTweetComponent } from './components/home/add-tweet/add-tweet.component';
 
 const materialModules = [
   MatIconModule
@@ -43,7 +44,8 @@ const routes: Routes = [
     BookmarksComponent,
     ExploreComponent,
     NotFoundComponent,
-    ProfileFeedComponent
+    ProfileFeedComponent,
+    AddTweetComponent
   ],
   imports: [
     BrowserModule,

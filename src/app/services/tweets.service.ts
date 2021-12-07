@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { ITweet } from '../interfaces/interfaces';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { ProfileService } from './profile.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,48 @@ export class TweetsService {
   feed = new Subject<ITweet[]>();
   bookmarked = new Subject<ITweet[]>();
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private profileService: ProfileService
+  ) {}
+
+  tweet(tweet: ITweet): void {
+    const endpoints = ['feed', 'profileFeed'];
+
+    endpoints.map((endpoint, index) => {
+      this.http
+        .post<ITweet>(`http://localhost:3000/${endpoint}`, tweet)
+        .subscribe(
+          () => {
+            index === 0
+              ? this.fetchFeed()
+              : this.profileService.fetchProfileFeed();
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    });
+  }
+
+  deleteTweet(tweetId: string | number): void {
+    const endpoints = ['feed', 'profileFeed'];
+
+    endpoints.map((endpoint, index) => {
+      this.http
+        .delete<ITweet>(`http://localhost:3000/${endpoint}/${tweetId}`)
+        .subscribe(
+          () => {
+            index === 0
+              ? this.fetchFeed()
+              : this.profileService.fetchProfileFeed();
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    });
+  }
 
   fetchFeed() {
     this.http.get<ITweet[]>('http://localhost:3000/feed').subscribe(

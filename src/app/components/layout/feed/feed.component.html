@@ -11,7 +11,7 @@
         [tweet]="tweet"
         [user]="user"
         [tweetComments]="tweetComments"
-        *ngFor="let tweet of feed"
+        *ngFor="let tweet of feed.reverse()"
       ></app-post>
     </div>
     <ng-template #elseBlock>

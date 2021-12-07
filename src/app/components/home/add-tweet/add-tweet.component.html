@@ -1,0 +1,31 @@
+<div class="addTweet">
+    <form
+      (ngSubmit)="onSubmit(addTweetForm)"
+      class="addTweet__wrapper"
+      #addTweetForm="ngForm"
+    >
+      <h1 class="title">Tweet something</h1>
+      <div class="main">
+        <img
+          class="profilePicture"
+          src="{{this.profile?.picture}}"
+          alt="Profile picture"
+        />
+        <input
+            type="text"
+            placeholder="What's happening?"
+            id="tweetInput"
+            name="tweetInput"
+            class="form-control"
+            ngModel
+        />
+      </div>
+      <div class="bottom">
+        <div class="icons">
+          <mat-icon class="icon" aria-label="Example home icon">public</mat-icon>
+          <h1>Everyone can reply</h1>
+        </div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
