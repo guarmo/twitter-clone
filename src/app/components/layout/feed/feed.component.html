@@ -1,0 +1,21 @@
+<div class="feed">
+  <div class="feed__left">
+    <h1>Tweets</h1>
+    <h1>Tweets & replies</h1>
+    <h1>Media</h1>
+    <h1>Likes</h1>
+  </div>
+  <ng-container *ngIf="user">
+    <div *ngIf="feed?.length; else elseBlock" class="feed__right">
+      <app-post
+        [tweet]="tweet"
+        [user]="user"
+        [tweetComments]="tweetComments"
+        *ngFor="let tweet of feed.reverse()"
+      ></app-post>
+    </div>
+    <ng-template #elseBlock>
+      <h1 class="title">No bookmarks so far</h1>
+    </ng-template>
+  </ng-container>
+</div>

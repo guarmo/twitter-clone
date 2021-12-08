@@ -17,8 +17,30 @@
       "picture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg"
     }
   ],
-  "profileFeed": [],
-  "feed": [
+  "profileFeed": [
+    {
+      "id": 2,
+      "user": 2,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "date": "Tue Nov 30 2021 11:27:54 GMT+0100 (Central European Standard Time)",
+      "content": "This is another post",
+      "image": "https://www.rei.com/dam/harnois_041918_1182-backpacking-tips-for-women-hero-lg.jpg",
+      "likes": [
+        1
+      ],
+      "retweet": {
+        "value": true,
+        "userRetweet": [
+          1
+        ],
+        "retweetCount": 1
+      },
+      "commentsCount": 1,
+      "saved": [
+        1
+      ]
+    },
     {
       "id": 1,
       "user": 2,
@@ -40,6 +62,47 @@
         1
       ],
       "commentsCount": 1,
+      "saved": []
+    },
+    {
+      "id": 5001,
+      "user": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "date": "2021-12-07T16:48:17.056Z",
+      "content": "here's new tweet",
+      "likes": [],
+      "retweet": {
+        "value": false,
+        "userRetweet": [],
+        "retweetCount": 0
+      },
+      "commentsCount": 0,
+      "saved": []
+    }
+  ],
+  "feed": [
+    {
+      "id": 1,
+      "user": 2,
+      "userName": "Peyton Lyons",
+      "userPicture": "https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg",
+      "date": 1638267731090,
+      "content": "Traveling - leaves you speechless, then turns you into a storyteller",
+      "image": "https://ibis.accor.com/editorial/imagerie/article/header_backpacking-3a60_1400x540.jpg",
+      "retweet": {
+        "value": true,
+        "userRetweet": [
+          1,
+          1,
+          1
+        ],
+        "retweetCount": 4
+      },
+      "likes": [
+        1
+      ],
+      "commentsCount": 2,
       "saved": [
         1
       ]
@@ -64,19 +127,25 @@
       },
       "commentsCount": 1,
       "saved": []
+    },
+    {
+      "id": 5001,
+      "user": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "date": "2021-12-07T16:48:17.056Z",
+      "content": "here's new tweet",
+      "likes": [],
+      "retweet": {
+        "value": false,
+        "userRetweet": [],
+        "retweetCount": 0
+      },
+      "commentsCount": 0,
+      "saved": []
     }
   ],
   "tweetComments": [
-    {
-      "id": "881775fc-90fe-40de-9aa2-d4945ced3dc6",
-      "user": 1,
-      "postId": 1,
-      "userName": "Daniel Jensen",
-      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
-      "content": "content here",
-      "date": "2021-12-02T14:20:13.967Z",
-      "likes": []
-    },
     {
       "id": "ae8ee367-b8f2-45a3-ac27-e8e55fcedab3",
       "user": 1,
@@ -85,6 +154,16 @@
       "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
       "content": "content here",
       "date": "2021-12-02T14:20:19.359Z",
+      "likes": []
+    },
+    {
+      "id": "b4d5f98d-86f5-44a2-84ee-08f099d4cd3a",
+      "user": 1,
+      "postId": 1,
+      "userName": "Daniel Jensen",
+      "userPicture": "https://www.morganstanley.com/content/dam/msdotcom/people/tiles/isaiah-dwuma.jpg.img.490.medium.jpg/1594668408164.jpg",
+      "content": "This is a comment",
+      "date": "2021-12-07T14:54:09.787Z",
       "likes": []
     }
   ],

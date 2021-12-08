@@ -3,7 +3,7 @@
 
 .wrapper {
     background-color: #fff;
-    
+
     .nav {
         display: flex;
         justify-content: space-between;
@@ -13,44 +13,46 @@
         width: 900px;
         max-width: 90vw;
         margin: 0 auto;
-      
+
         &__left {
             display: flex;
-            align-items: center; 
-            
+            align-items: center;
+
+            @media screen and (max-width: $breakpoint-medium) {
+                display: none;
+            }
+
             img {
                 width: 30px;
                 margin-right: 10px;
             }
       }
-      
+
         &__middle {
             display: flex;
             justify-content: center;
-      
-            button {
+
+            a {
                 color: $custom-gray;
                 margin-right: 25px;
-      
+                font-size: 14px;
+
                 &:hover {
                     color: $custom-blue;
                 }
             }
         }
-      
+
         &__right {
             display: flex;
             align-items: center;
-      
+            font-size: 14px;
+
             img {
                 width: 40px;
                 margin-right: 10px;
             }
-
-            @media screen and (max-width: $breakpoint-medium) {
-                display: none;
-            }
         }
       }
-      
+
 }

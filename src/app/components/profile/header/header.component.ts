@@ -14,8 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
-    this.profileService.profile.pipe(tap((results) => {
-    })).subscribe((results) => {
+    this.profileService.profile.subscribe((results) => {
       this.profile = results;
     });
 }

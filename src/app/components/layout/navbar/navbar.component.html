@@ -1,15 +1,16 @@
 <div class="wrapper">
   <nav class="nav">
-    <div class="nav__left">
-      <img src="../../../../assets/images/logo.png" alt="">
+    <a id="logo" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}" class="nav__left">
+      <img src="../../../../assets/images/logo.png" alt="" />
       <h1>Tweeter</h1>
-    </div>
+    </a>
     <div class="nav__middle">
-      <button>Home</button> <button>Explore</button> <button>Bookmarks</button>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Home</a>
+      <a routerLink="bookmarks" routerLinkActive="active">Bookmarks</a>
     </div>
-    <div class="nav__right">
-      <img src="{{profilePicture}}" alt="profile picture">
-      <h1>{{name}}</h1>
-    </div>
+    <a class="nav__right">
+      <img src="{{ profilePicture }}" alt="profile picture" />
+      <a routerLink="profile" routerLinkActive="active">{{ name }}</a>
+    </a>
   </nav>
 </div>

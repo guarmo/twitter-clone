@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { NgForm } from '@angular/forms';
 import { IComment, IProfile, ITweet } from 'src/app/interfaces/interfaces';
-import { ProfileService } from 'src/app/services/profile.service';
 import { CommentsService } from 'src/app/services/comments.service';
 import { TweetsService } from 'src/app/services/tweets.service';
 
@@ -57,6 +56,11 @@ export class PostComponent implements OnInit {
   ): void {
     alert('Comment liked');
     this.commentsService.likeComment(userId, type, comment);
+  }
+
+  onDeleteTweet(tweetId: string | number): void {
+    alert("Tweet deleted");
+    this.tweetService.deleteTweet(tweetId);
   }
 
   onLikeTweet(userId: number | string, tweet: ITweet): void {

@@ -2,38 +2,81 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { ITweet } from '../interfaces/interfaces';
-import { filter, map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { ProfileService } from './profile.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TweetsService {
   feed = new Subject<ITweet[]>();
-  profileFeed = new Subject<ITweet[]>();
+  bookmarked = new Subject<ITweet[]>();
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private profileService: ProfileService
+  ) {}
 
-  fetchFeed() {
-    this.http
-      .get<ITweet[]>('http://localhost:3000/feed')
-      // .pipe(tap((response) => console.log(response)))
-      .subscribe(
-        (response) => {
-          this.feed.next(response);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
+  tweet(tweet: ITweet): void {
+    const endpoints = ['feed', 'profileFeed'];
+
+    endpoints.map((endpoint, index) => {
+      this.http
+        .post<ITweet>(`http://localhost:3000/${endpoint}`, tweet)
+        .subscribe(
+          () => {
+            index === 0
+              ? this.fetchFeed()
+              : this.profileService.fetchProfileFeed();
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    });
   }
 
-  fetchProfileFeed() {
+  deleteTweet(tweetId: string | number): void {
+    const endpoints = ['feed', 'profileFeed'];
+
+    endpoints.map((endpoint, index) => {
+      this.http
+        .delete<ITweet>(`http://localhost:3000/${endpoint}/${tweetId}`)
+        .subscribe(
+          () => {
+            index === 0
+              ? this.fetchFeed()
+              : this.profileService.fetchProfileFeed();
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+    });
+  }
+
+  fetchFeed() {
+    this.http.get<ITweet[]>('http://localhost:3000/feed').subscribe(
+      (response) => {
+        this.feed.next(response);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  fetchBookmarked() {
     this.http
-      .get<ITweet[]>('http://localhost:3000/profileFeed')
-      // .pipe(tap((response) => console.log(response)))
+      .get<ITweet[]>('http://localhost:3000/feed')
+      .pipe(
+        map((result: any) =>
+          result.filter((el: { saved: string | any[] }) => el.saved.length > 0)
+        )
+      )
       .subscribe(
         (response) => {
-          this.profileFeed.next(response);
+          this.bookmarked.next(response);
         },
         (error) => {
           console.log(error);
@@ -60,8 +103,10 @@ export class TweetsService {
 
     const body: ITweet = {
       ...tweet,
-      saved: !tweet.saved.includes(userId) ? [...tweet.saved, userId] : tweet.saved,
-      }
+      saved: !tweet.saved.includes(userId)
+        ? [...tweet.saved, userId]
+        : tweet.saved,
+    };
 
     this.http.put(uri, body).subscribe(() => {
       this.fetchFeed();

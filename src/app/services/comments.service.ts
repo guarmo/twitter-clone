@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { IComment, ITweet } from '../interfaces/interfaces';
 import { TweetsService } from 'src/app/services/tweets.service';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,6 @@ export class CommentsService {
   getComments(type: 'tweetComments' | 'replyComments'): void {
     this.http
       .get<IComment[]>(`http://localhost:3000/${type}`)
-      // .pipe(tap((response) => console.log(response)))
       .subscribe((comments) => {
         if (type === 'tweetComments') {
           this.tweetComments.next(comments);
