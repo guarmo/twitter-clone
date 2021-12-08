@@ -38,7 +38,8 @@ const newUser = {
     'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80',
 };
 
-export function profileReducer(state = initialState, action: ProfileActions.AddUser) {
+// @todo change action type
+export function profileReducer(state = initialState, action: any) {
   switch (action.type) {
     case ProfileActions.ADD_USER:
       return {

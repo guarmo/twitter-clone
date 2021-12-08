@@ -4,5 +4,5 @@ import { IProfile } from "src/app/interfaces/interfaces";
 
 export class AddUser implements Action {
     readonly type = ADD_USER;
-    payload: IProfile;
+    public payload?: IProfile;
 }
